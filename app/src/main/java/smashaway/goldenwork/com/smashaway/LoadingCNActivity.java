@@ -21,6 +21,13 @@ public class LoadingCNActivity extends AppCompatActivity {
                 gotoCN();
             }
         });
+        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoCN();
+            }
+        });
     }
     private void gotoCN() {
         Intent intent = new Intent(this, LoadingNIActivity.class);

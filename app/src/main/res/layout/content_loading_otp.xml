@@ -60,7 +60,7 @@
                 android:hint="One Time Pin (e.g. 0000)"
                 android:layout_weight="8"/>
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab"
+                android:id="@+id/fab1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 app:srcCompat="@android:drawable/ic_menu_send"
