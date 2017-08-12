@@ -117,6 +117,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"/>
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Latest pool claims"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorGrey"
+        android:layout_marginTop="20dp"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/recyclerview"></android.support.v7.widget.RecyclerView>
+
+
+    </ScrollView>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey"/>
 </LinearLayout>

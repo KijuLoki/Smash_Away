@@ -8,4 +8,57 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <!-- navigation drawer item labels  -->
+
+    <string name="nav_item_myDashboard">My Dashboard</string>
+    <string name="nav_item_myCommunity">My Community</string>
+    <string name="nav_item_helpingOut">Helping out</string>
+    <string name="nav_item_myPolicy">My Policy</string>
+    <string name="nav_item_claims">Claims</string>
+    <string name="nav_item_legalStuff">Legal Stuff</string>
+
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_myDashboard</item>
+        <item>@string/nav_item_myCommunity</item>
+        <item>@string/nav_item_helpingOut</item>
+        <item>@string/nav_item_myPolicy</item>
+        <item>@string/nav_item_claims</item>
+        <item>@string/nav_item_legalStuff</item>
+    </string-array>
+
+    <string-array name="elements_home">
+    </string-array>
+    <string-array name="elements_myCommunity">
+        <item>My community</item>
+        <item>Invite</item>
+        <item>Pledge Pool</item>
+        <item>Smash blog</item>
+    </string-array>
+    <string-array name="elements_helpingOut">
+        <item>Current Smash projects</item>
+        <item>Report a fraudster</item>
+        <item>Suggest an improvement</item>
+        <item>Community Q&amp;A</item>
+    </string-array>
+    <string-array name="elements_myPolicy">
+        <item>My Details</item>
+        <item>Add/Remove items</item>
+        <item>To-do</item>
+        <item>Correspondence</item>
+    </string-array>
+    <string-array name="elements_claims">
+        <item>Submit new claim</item>
+        <item>Track my claim(s)</item>
+        <item>Claims in my pool</item>
+        <item>Report a fraudster</item>
+    </string-array>
+    <string-array name="elements_legalStuff">
+        <item>Ask us something</item>
+        <item>Full T\'s &amp; C\'s</item>
+        <item>FSP details</item>
+        <item>Dispute information</item>
+    </string-array>
 </resources>
