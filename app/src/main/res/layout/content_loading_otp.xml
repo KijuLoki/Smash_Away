@@ -78,13 +78,14 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:background="#111111"
+            android:background="@color/colorGrey"
             ></View>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Authorized Financial Services Provider\nFSP no 48216"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorGrey"/>
     </LinearLayout>
 
 </RelativeLayout>
