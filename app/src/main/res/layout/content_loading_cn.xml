@@ -15,9 +15,11 @@
         android:gravity="center">
         <ImageView
             android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/add"
-            android:layout_gravity="center" />
+            android:layout_height="70dp"
+            android:background="#00111111"
+            android:layout_gravity="center"
+            android:src="@drawable/img_user"
+            android:layout_marginTop="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -28,29 +30,32 @@
         >
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/img_logo"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:scaleType="fitCenter"/>
+            android:layout_height="300dp"
+            android:background="#00111111"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="50dp">
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:hint="Your cell no (e.g. 082 100 1000)"
-                android:layout_weight="8"/>
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab1"
+                android:layout_weight="8"
+                android:inputType="number" />
+            <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                app:srcCompat="@android:drawable/ic_menu_send"
-                android:layout_weight="1"
-                android:backgroundTint="@color/colorPrimaryDark"/>
+                android:background="#00111111"
+                android:src="@drawable/btn_button"
+                android:id="@+id/btn_next"/>
         </LinearLayout>
 
 

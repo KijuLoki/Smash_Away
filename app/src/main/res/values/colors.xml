@@ -2,6 +2,12 @@
 <resources>
     <color name="colorPrimary">#2E3094</color>
     <color name="colorPrimaryDark">#3554A7</color>
-    <color name="colorAccent">#F6911B</color>
+    <color name="colorAccent">#F7941D</color>
     <color name="colorGrey">#c8c8c8</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlueText">#2B2D92</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="clo1">#F7941D</color>
+    <color name="clo2">#FF4351</color>
+    <color name="clo3">#2D3099</color>
 </resources>

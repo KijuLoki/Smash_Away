@@ -11,35 +11,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_vertical"
-        >
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/img_logo"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:scaleType="fitCenter"/>
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/add"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:id="@+id/loadnext"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="New installation detected"
-            android:gravity="center_horizontal"
-            />
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_alignParentBottom="true">
@@ -54,6 +25,40 @@
             android:text="Authorized Financial Services Provider\nFSP no 48216"
             android:gravity="center_horizontal"
             android:textColor="@color/colorGrey"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="#00111111"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:id="@+id/loadnext"
+            android:src="@drawable/img_add"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New installation detected"
+            android:gravity="center_horizontal"
+            />
+
+
     </LinearLayout>
 
 </RelativeLayout>

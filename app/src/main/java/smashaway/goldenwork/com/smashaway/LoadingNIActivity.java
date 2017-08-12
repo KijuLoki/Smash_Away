@@ -25,7 +25,7 @@ public class LoadingNIActivity extends AppCompatActivity {
         });
     }
     private void gotoCN() {
-        Intent intent = new Intent(this, LoadingOTPActivity.class);
+        Intent intent = new Intent(this, LoadingCNActivity.class);
         startActivity(intent);
     }
 }

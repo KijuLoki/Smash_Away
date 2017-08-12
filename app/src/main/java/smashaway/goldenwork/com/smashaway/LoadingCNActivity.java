@@ -7,22 +7,19 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 public class LoadingCNActivity extends AppCompatActivity {
 
+
+    ImageView btn_next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading_cn);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotoCN();
-            }
-        });
-        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.fab1);
-        fab.setOnClickListener(new View.OnClickListener() {
+        btn_next = (ImageView) findViewById(R.id.btn_next);
+        btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 gotoCN();
@@ -30,7 +27,7 @@ public class LoadingCNActivity extends AppCompatActivity {
         });
     }
     private void gotoCN() {
-        Intent intent = new Intent(this, LoadingNIActivity.class);
+        Intent intent = new Intent(this, LoadingOTPActivity.class);
         startActivity(intent);
     }
 }

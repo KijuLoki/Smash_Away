@@ -29,5 +29,8 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'com.google.android:flexbox:0.3.0'
+    compile 'com.mikepenz:iconics-core:2.8.8@aar'
+    compile 'com.mikepenz:community-material-typeface:1.9.32.2@aar'
     testCompile 'junit:junit:4.12'
 }

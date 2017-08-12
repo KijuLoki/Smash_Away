@@ -39,6 +39,7 @@ public class LoadingActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
+                progressBar.setProgress(4);
                 gotoCN();
             }
         }.start();

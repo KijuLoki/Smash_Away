@@ -29,6 +29,10 @@
         <activity
             android:name=".LoadingOTPActivity"
             android:label="@string/title_activity_loading_otp"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DashboardActivity"
+            android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
