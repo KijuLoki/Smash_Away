@@ -61,6 +61,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         PoolItem pitem = poolList.get(position);
+
         holder.title.setText(pitem.getName()+" : "+pitem.getUstensile());
         holder.genre.setText(pitem.getDateclaim());
         if(pitem.getType().equals("car")){
@@ -75,7 +76,12 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
         if(pitem.getUrlprofile().equals("")){
             holder.profile_icon.setImageResource(R.drawable.account_circle);
         } else{
-            Picasso.with(holder.cont).load(pitem.getUrlprofile()).transform(new CircleTransform()).into(holder.profile_icon );
+            Picasso.with(holder.profile_icon.getContext())
+                    .load(pitem.getUrlprofile())
+                    .placeholder(R.drawable.account_circle)
+                    .error(R.drawable.menu)
+                    .transform(new CircleTransform())
+                    .into(holder.profile_icon );
         }
     }
 

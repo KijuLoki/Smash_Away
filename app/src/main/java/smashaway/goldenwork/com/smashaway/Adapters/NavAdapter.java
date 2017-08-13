@@ -64,7 +64,8 @@ public class NavAdapter extends BaseExpandableListAdapter {
 
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.lblListItem);
-
+        TextView txtnumber = (TextView)convertView.findViewById(R.id.notif_number);
+        txtnumber.setText(String.valueOf(childText.length()));
         txtListChild.setText(childText);
         return convertView;
     }

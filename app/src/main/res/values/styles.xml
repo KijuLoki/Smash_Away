@@ -15,6 +15,14 @@
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" >
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+    </style>
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_menu_share</item>
+        <item name="android:actionBarSize">64dp</item>
+        <item name="actionBarSize">64dp</item>
+    </style>
 
 </resources>

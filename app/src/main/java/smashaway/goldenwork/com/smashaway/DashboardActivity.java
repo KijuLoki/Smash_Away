@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -18,7 +19,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ExpandableListView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -65,6 +71,7 @@ public class DashboardActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
        /* DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -84,6 +91,19 @@ public class DashboardActivity extends AppCompatActivity
         recyclerview.setLayoutManager(mLayoutManager);
         recyclerview.setItemAnimator(new DefaultItemAnimator());
         recyclerview.setAdapter(myAdapter);
+        for (int i = 0; i < toolbar.getChildCount(); i++) {
+            if(toolbar.getChildAt(i) instanceof Button){
+                Log.e(TAG, "found Button");
+            }
+            if(toolbar.getChildAt(i) instanceof ImageView){
+                Log.e(TAG, "found ImageView");
+            }
+            if(toolbar.getChildAt(i) instanceof ImageButton){
+                Log.e(TAG, "found ImageButton");
+                toolbar.getChildAt(i).setScaleX(5f);
+                toolbar.getChildAt(i).setScaleY(5f);
+            }
+        }
         initDashbord();
         initDrawer();
     }
@@ -103,15 +123,15 @@ public class DashboardActivity extends AppCompatActivity
 
         //set fake data for recyclerView
         //(int id, String name, String ustensile, String type, String dateclaim, String urlprofile)
-        PoolItem p = new PoolItem(0,"Theresa","Audi Q5 (accident)", "car", "6 June 2017","");
+        PoolItem p = new PoolItem(0,"Theresa","Audi Q5 (accident)", "car", "6 June 2017","https://icr.ethz.ch/people/leimpek/TL2.png");
         pitemList.add(p);
-        p = new PoolItem(1,"Christo","iPhone (theft)", "heart", "22 May 2017","");
+        p = new PoolItem(1,"Christo","iPhone (theft)", "heart", "22 May 2017","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
         pitemList.add(p);
-        p = new PoolItem(2,"Christo","Guitar (theft)", "heart", "22 May 2017","");
+        p = new PoolItem(2,"Christo","Guitar (theft)", "heart", "22 May 2017","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
         pitemList.add(p);
         p = new PoolItem(3,"John","Geyser (damage)", "house", "16 March 2017","");
         pitemList.add(p);
-        p = new PoolItem(4,"Dieter","Various items (break-in)", "house", "28 February 2017","");
+        p = new PoolItem(4,"Dieter","Various items (break-in)", "house", "28 February 2017","https://d2fijpsef22722.cloudfront.net/photos/pd_portrait_big/348636407-the-side-roads-with-peek-s-co-founder---cto.jpg");
         pitemList.add(p);
         Log.e(TAG, String.valueOf(pitemList.size()));
         myAdapter.notifyDataSetChanged();
@@ -132,13 +152,18 @@ public class DashboardActivity extends AppCompatActivity
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         drawerList = (ExpandableListView) findViewById(R.id.left_drawer);
-
         // preparing list data
         prepareListData();
-
+        //drawerList.setGroupIndicator(null);
         drawerList.setAdapter(new NavAdapter(this, listDataHeader, listDataChild));
 
         drawerList.setOnChildClickListener(this);
+        drawerList.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
+            @Override
+            public void onGroupExpand(int i) {
+
+            }
+        });
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.drawer_open , R.string.drawer_close ){
 
@@ -155,12 +180,28 @@ public class DashboardActivity extends AppCompatActivity
                 super.onDrawerOpened(drawerView);
             }
         };
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
+        actionBarDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(drawer.isDrawerOpen(GravityCompat.START)){
+                    drawer.closeDrawer(GravityCompat.START);
+                    Log.e(TAG,"clicked open");
+                } else{
+                    drawer.openDrawer(GravityCompat.START);
+                    Log.e(TAG,"clicked close");
+                }
 
+            }
+        });
+        actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.menu);
+        actionBarDrawerToggle.setDrawerSlideAnimationEnabled(true);
         //Setting the actionbarToggle to drawer layout
         drawer.setDrawerListener(actionBarDrawerToggle);
 
         //calling sync state is necessay or else your hamburger icon wont show up
         actionBarDrawerToggle.syncState();
+        setGroupIndicatorToRight();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -178,6 +219,7 @@ public class DashboardActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
             return true;
         }
 
@@ -214,11 +256,8 @@ public class DashboardActivity extends AppCompatActivity
 //        }
 
         // Static method
-        List<String> home,community,helpinout, mypolicy, claims,legalStuff;
-        String[] shome,scommunity,shelpout, smypolicy, sclaims,slegalStuff;
-
-        shome = res.getStringArray(R.array.elements_home);
-        home = Arrays.asList(shome);
+        List<String> community,helpinout, mypolicy, claims,legalStuff;
+        String[] scommunity,shelpout, smypolicy, sclaims,slegalStuff;
 
         scommunity = res.getStringArray(R.array.elements_myCommunity);
         community = Arrays.asList(scommunity);
@@ -236,12 +275,11 @@ public class DashboardActivity extends AppCompatActivity
         legalStuff = Arrays.asList(slegalStuff);
 
         // Add to hashMap
-        listDataChild.put(listDataHeader.get(0), home); // Header, Child data
-        listDataChild.put(listDataHeader.get(1), community);
-        listDataChild.put(listDataHeader.get(2), helpinout);
-        listDataChild.put(listDataHeader.get(3), mypolicy); // Header, Child data
-        listDataChild.put(listDataHeader.get(4), claims);
-        listDataChild.put(listDataHeader.get(5), legalStuff);
+        listDataChild.put(listDataHeader.get(0), community);
+        listDataChild.put(listDataHeader.get(1), helpinout);
+        listDataChild.put(listDataHeader.get(2), mypolicy); // Header, Child data
+        listDataChild.put(listDataHeader.get(3), claims);
+        listDataChild.put(listDataHeader.get(4), legalStuff);
     }
     @Override
     public boolean onChildClick(ExpandableListView parent, View v,
@@ -256,4 +294,23 @@ public class DashboardActivity extends AppCompatActivity
                 .show();
         return false;
     }
+
+
+
+    private void setGroupIndicatorToRight() {
+    /* Get the screen width */
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;
+        drawerList.setIndicatorBounds(width - getDipsFromPixel(35), width - getDipsFromPixel(5));
+    }
+    // Convert pixel to dip
+    public int getDipsFromPixel(float pixels) {
+        // Get the screen's density scale
+        final float scale = getResources().getDisplayMetrics().density;
+        // Convert the dps to pixels, based on density scale
+        return (int) (pixels * scale + 250.5f);
+    }
+
+
 }

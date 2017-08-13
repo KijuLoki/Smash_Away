@@ -4,15 +4,38 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/list_selector">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+android:layout_margin="5dp">
     <TextView
         android:id="@+id/lblListItem"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:textSize="18dip"
         android:paddingTop="5dp"
+        android:textColor="@color/colorBlack"
         android:text="Hello"
         android:paddingBottom="5dp"
+        android:layout_marginLeft="20dp"
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft" />
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="120"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:background="@drawable/rounded_corner"
+        android:layout_toRightOf="@+id/lblListItem"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/notif_number"/>
 
+</RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"
+        ></View>
 </LinearLayout>

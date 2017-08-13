@@ -13,7 +13,7 @@
 
     <!-- navigation drawer item labels  -->
 
-    <string name="nav_item_myDashboard">My Dashboard</string>
+
     <string name="nav_item_myCommunity">My Community</string>
     <string name="nav_item_helpingOut">Helping out</string>
     <string name="nav_item_myPolicy">My Policy</string>
@@ -21,7 +21,7 @@
     <string name="nav_item_legalStuff">Legal Stuff</string>
 
     <string-array name="nav_drawer_labels">
-        <item>@string/nav_item_myDashboard</item>
+
         <item>@string/nav_item_myCommunity</item>
         <item>@string/nav_item_helpingOut</item>
         <item>@string/nav_item_myPolicy</item>
