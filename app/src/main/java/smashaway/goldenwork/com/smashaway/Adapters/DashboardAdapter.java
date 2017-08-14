@@ -79,7 +79,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
             Picasso.with(holder.profile_icon.getContext())
                     .load(pitem.getUrlprofile())
                     .placeholder(R.drawable.account_circle)
-                    .error(R.drawable.menu)
+                    .error(R.drawable.account_circle)
                     .transform(new CircleTransform())
                     .into(holder.profile_icon );
         }

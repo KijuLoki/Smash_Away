@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import smashaway.goldenwork.com.smashaway.Adapters.DashboardAdapter;
 import smashaway.goldenwork.com.smashaway.Adapters.NavAdapter;
@@ -113,12 +114,15 @@ public class DashboardActivity extends AppCompatActivity
         List<String> listMonths = new ArrayList<>();
         List<Integer> listvalues = new ArrayList<>();
         List<Entry> entries = new ArrayList<Entry>();
+        Random r = new Random();
         for (int i =0; i<12;i++){
-            entries.add(new Entry((float)(i), (float)(i*100)));
+            entries.add(new Entry((float)(i), (float)(r.nextInt(1000))));
         }
-        LineDataSet dataSet = new LineDataSet(entries, "Label");
+        LineDataSet dataSet = new LineDataSet(entries, "Your profit build-up");
         LineData lineData = new LineData(dataSet);
         chart.setData(lineData);
+        chart.setDrawGridBackground(false);
+        chart.setDrawBorders(false);
         chart.invalidate();
 
         //set fake data for recyclerView
@@ -312,7 +316,7 @@ public class DashboardActivity extends AppCompatActivity
         // Get the screen's density scale
         final float scale = getResources().getDisplayMetrics().density;
         // Convert the dps to pixels, based on density scale
-        return (int) (pixels * scale + 85.0f);
+        return (int) (pixels * scale + 100.0f);
     }
 
 

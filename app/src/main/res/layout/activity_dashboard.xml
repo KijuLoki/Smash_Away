@@ -52,28 +52,31 @@
             android:text="Menu"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:layout_weight="6"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:textColor="@color/colorBlueText"
             android:textStyle="bold"
-            android:textSize="30dp"/>
+            android:textSize="25dp"/>
 <RelativeLayout
     android:layout_width="60dp"
     android:layout_height="60dp"
     android:gravity="center">
     <com.mikepenz.iconics.view.IconicsImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:iiv_color="@color/clo3"
         app:iiv_icon="cmd-bell"
         android:id="@+id/notif_icon"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:layout_margin="10dp"/>
     <TextView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
         android:text="120"
+        android:textSize="10dp"
         android:textStyle="bold"
         android:textColor="@color/colorWhite"
         android:gravity="center"
+        android:layout_margin="19dp"
         android:background="@drawable/rounded_corner"
         android:layout_toRightOf="@+id/lblListItem"
         android:layout_marginLeft="10dp"

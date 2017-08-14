@@ -3,18 +3,43 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@drawable/list_selector">
+    android:background="@drawable/list_selector"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <TextView
-        android:id="@+id/lblListHeader"
-        android:layout_width="fill_parent"
-        android:text="HEllO"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
-        android:textSize="20dp"
-        android:textColor="@color/colorBlack"/>
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:background="@color/colorWhite"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/lblListHeader"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="My Dashboard"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_weight="6"
+            android:gravity="left"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
+<LinearLayout
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:gravity="center">
+    <!--com.mikepenz.iconics.view.IconicsImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        app:iiv_color="@color/colorBlack"
+        app:iiv_icon="cmd-chevron-down"
+        android:id="@+id/house_icon"
+        android:layout_weight="1"/-->
+
+</LinearLayout>
+
+
+    </LinearLayout>
 
 </LinearLayout>

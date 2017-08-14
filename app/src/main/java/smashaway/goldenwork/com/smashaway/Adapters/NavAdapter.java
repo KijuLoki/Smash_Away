@@ -3,11 +3,14 @@ package smashaway.goldenwork.com.smashaway.Adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
+
+import com.mikepenz.iconics.view.IconicsImageView;
 
 import java.util.HashMap;
 import java.util.List;
@@ -65,7 +68,14 @@ public class NavAdapter extends BaseExpandableListAdapter {
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.lblListItem);
         TextView txtnumber = (TextView)convertView.findViewById(R.id.notif_number);
-        txtnumber.setText(String.valueOf(childText.length()));
+        if(childText.length()>10){
+            txtnumber.setVisibility(View.INVISIBLE);Log.e("NAVADP","if");
+        } else{
+            txtnumber.setVisibility(View.VISIBLE);
+            txtnumber.setText(String.valueOf(childText.length()));
+            Log.e("NAVADP","else");
+        }
+
         txtListChild.setText(childText);
         return convertView;
     }

@@ -26,11 +26,15 @@
             android:alpha="0.2"/>
 
     </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+            >
     <com.google.android.flexbox.FlexboxLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -38,17 +42,19 @@
         android:layout_height="wrap_content"
         android:maxHeight="200dp"
         app:flexWrap="wrap"
-        app:alignItems="stretch"
-        app:alignContent="stretch"
+       app:alignItems="center"
+        app:alignContent="space_between"
+        app:justifyContent="center"
         android:layout_margin="10dp">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="90dp"
-            app:layout_flexBasisPercent="30%"
+            app:layout_flexBasisPercent="27%"
             android:orientation="vertical"
             android:background="@color/clo1"
-            android:layout_margin="10sp"
-            android:id="@+id/q1">
+            android:id="@+id/q1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -56,6 +62,7 @@
                 android:layout_weight="31"
                 android:gravity="center"
                 android:typeface="monospace"
+                android:textSize="11dp"
                 android:id="@+id/t1"
                 android:textColor="@color/colorWhite"/>
             <TextView
@@ -75,10 +82,11 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="90dp"
-            app:layout_flexBasisPercent="30%"
+            app:layout_flexBasisPercent="27%"
             android:orientation="vertical"
             android:background="@color/clo2"
-            android:layout_margin="10sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:id="@+id/q2">
             <TextView
                 android:layout_width="match_parent"
@@ -87,6 +95,7 @@
                 android:layout_weight="3"
                 android:gravity="center"
                 android:typeface="monospace"
+                android:textSize="11dp"
                 android:id="@+id/t2"
                 android:textColor="@color/colorWhite"/>
             <TextView
@@ -105,10 +114,11 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="90dp"
-            app:layout_flexBasisPercent="30%"
+            app:layout_flexBasisPercent="27%"
             android:orientation="vertical"
             android:background="@color/clo3"
-            android:layout_margin="10sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:id="@+id/q3">
             <TextView
                 android:layout_width="match_parent"
@@ -117,6 +127,7 @@
                 android:layout_weight="3"
                 android:gravity="center"
                 android:typeface="monospace"
+                android:textSize="11dp"
                 android:id="@+id/t3"
                 android:textColor="@color/colorWhite"/>
             <TextView
@@ -161,20 +172,19 @@
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="@color/colorGrey"/>
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/recyclerview"></android.support.v7.widget.RecyclerView>
 
 
-        </ScrollView>
+
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="@color/colorGrey"/>
     </LinearLayout>
     </LinearLayout>
+    </ScrollView>
 </RelativeLayout>
