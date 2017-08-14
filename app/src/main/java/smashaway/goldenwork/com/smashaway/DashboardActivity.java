@@ -303,13 +303,16 @@ public class DashboardActivity extends AppCompatActivity
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
         drawerList.setIndicatorBounds(width - getDipsFromPixel(35), width - getDipsFromPixel(5));
+        Log.e(TAG,String.valueOf(width - getDipsFromPixel(35)));
+        Log.e(TAG,String.valueOf(width - getDipsFromPixel(5)));
+        Log.e(TAG,String.valueOf(width));
     }
     // Convert pixel to dip
     public int getDipsFromPixel(float pixels) {
         // Get the screen's density scale
         final float scale = getResources().getDisplayMetrics().density;
         // Convert the dps to pixels, based on density scale
-        return (int) (pixels * scale + 250.5f);
+        return (int) (pixels * scale + 85.0f);
     }
 
 
