@@ -69,11 +69,11 @@ public class NavAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.lblListItem);
         TextView txtnumber = (TextView)convertView.findViewById(R.id.notif_number);
         if(childText.length()>10){
-            txtnumber.setVisibility(View.INVISIBLE);Log.e("NAVADP","if");
+            txtnumber.setVisibility(View.INVISIBLE);
         } else{
             txtnumber.setVisibility(View.VISIBLE);
             txtnumber.setText(String.valueOf(childText.length()));
-            Log.e("NAVADP","else");
+
         }
 
         txtListChild.setText(childText);
@@ -125,7 +125,13 @@ public class NavAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.lblListHeader);
         lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle);
-
+        IconicsImageView house_icon = (IconicsImageView) convertView.findViewById(R.id.house_icon);
+        if (isExpanded) {
+            house_icon.setColorRes(R.color.colorAccent);
+         }
+        else {
+            house_icon.setColorRes(R.color.colorBlack);
+        }
         return convertView;
     }
 

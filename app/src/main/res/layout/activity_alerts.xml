@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_alerts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_alerts"
+        app:menu="@menu/activity_alerts_drawer" /-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/left_drawer_rel"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="start"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/colorWhite"
+            android:padding="10dp">
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:iiv_color="@color/colorAccent"
+                app:iiv_icon="cmd-menu"
+                android:id="@+id/menu_icon"
+                android:layout_weight="1"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="Menu"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:textColor="@color/colorBlueText"
+                android:textStyle="bold"
+                android:textSize="25dp"/>
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:gravity="center">
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:iiv_color="@color/clo3"
+                    app:iiv_icon="cmd-bell"
+                    android:id="@+id/notif_icon"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:text="120"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:gravity="center"
+                    android:layout_margin="19dp"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_toRightOf="@+id/lblListItem"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/notif_number"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            ></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="left"
+            android:background="@color/colorWhite"
+            android:padding="10dp"
+            android:onClick="openHome">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="My Dashboard"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:iiv_color="@color/colorGrey"
+                app:iiv_icon="cmd-home"
+                android:id="@+id/house_icon"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            ></View>
+        <ExpandableListView
+            android:layout_alignParentTop="true"
+            android:id="@+id/left_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:dividerHeight="1dp"
+            android:divider="@color/colorAccent"
+            android:listSelector="@drawable/list_selector"
+            android:groupIndicator="@drawable/settings_selector">
+        </ExpandableListView>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

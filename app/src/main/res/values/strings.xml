@@ -29,8 +29,7 @@
         <item>@string/nav_item_legalStuff</item>
     </string-array>
 
-    <string-array name="elements_home">
-    </string-array>
+    <string-array name="elements_home"></string-array>
     <string-array name="elements_myCommunity">
         <item>My community</item>
         <item>Invite</item>
@@ -61,4 +60,6 @@
         <item>FSP details</item>
         <item>Dispute information</item>
     </string-array>
+    <string name="title_activity_alerts">AlertsActivity</string>
+    <string name="title_activity_community">CommunityActivity</string>
 </resources>

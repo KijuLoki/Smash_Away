@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+<ImageView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:src="@drawable/ic_menu_camera"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:id="@+id/profile_icon"/>
+     <TextView
+        android:id="@+id/title"
+        android:textColor="@color/colorBlack"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/profile_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="zfzedfzef"
+         android:layout_marginRight="70dp"/>
+
+    <TextView
+        android:id="@+id/genre"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="fzdsfdzezf"
+        android:textSize="17dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/profile_icon"
+        android:layout_marginRight="70dp"/>
+<LinearLayout
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:gravity="center"
+    android:layout_weight="12"
+    android:layout_alignParentRight="true">
+    <com.mikepenz.iconics.view.IconicsImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:iiv_color="@color/clo2"
+        app:iiv_icon="cmd-heart"
+        android:id="@+id/type_icon"/>
+</LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

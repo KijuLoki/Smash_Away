@@ -59,7 +59,8 @@
 <RelativeLayout
     android:layout_width="60dp"
     android:layout_height="60dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:onClick="openAlerts">
     <com.mikepenz.iconics.view.IconicsImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -96,7 +97,8 @@
         android:orientation="horizontal"
         android:gravity="left"
         android:background="@color/colorWhite"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:onClick="openHome">
 
         <TextView
             android:layout_width="match_parent"

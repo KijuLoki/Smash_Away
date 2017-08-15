@@ -8,21 +8,32 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="smashaway.goldenwork.com.smashaway.LoadingActivity"
     tools:showIn="@layout/activity_loading">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00111111"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"
+            android:alpha="1"
+            android:layout_marginBottom="50dp"/>
+
+    </LinearLayout>
+
 
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center_vertical"
-    >
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="#00111111"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/img_logo"/>
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="50dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,6 +51,8 @@
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
+
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

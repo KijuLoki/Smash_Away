@@ -22,7 +22,7 @@ import smashaway.goldenwork.com.smashaway.helpers.CircleTransform;
  * Created by kader on 12/08/2017.
  */
 
-public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyViewHolder> {
+public class CommunityAdapter extends RecyclerView.Adapter<CommunityAdapter.MyViewHolder> {
 
     private List<PoolItem> poolList;
     private String TAG = "DBOARDADAPT";
@@ -44,7 +44,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
     }
 
 
-    public DashboardAdapter(List<PoolItem> poolList) {
+    public CommunityAdapter(List<PoolItem> poolList) {
         this.poolList = poolList;
         Log.e(TAG, String.valueOf(poolList.size()));
     }
@@ -52,7 +52,7 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_row_pool, parent, false);
+                .inflate(R.layout.list_row_community, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -61,9 +61,14 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
     public void onBindViewHolder(MyViewHolder holder, int position) {
         PoolItem pitem = poolList.get(position);
 
-        holder.title.setText(pitem.getName()+" : "+pitem.getUstensile());
-        holder.genre.setText(pitem.getDateclaim());
-        if(pitem.getType().equals("car")){
+        holder.title.setText(pitem.getName());
+        if(pitem.getDateclaim().equals("")){
+            holder.genre.setVisibility(View.GONE);
+        } else{
+            holder.genre.setText(pitem.getDateclaim());
+        }
+
+        /*if(pitem.getType().equals("car")){
             holder.type_icon.setIcon("cmd-car");
         }
         if(pitem.getType().equals("heart")){
@@ -71,10 +76,13 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.MyVi
         }
         if(pitem.getType().equals("house")){
             holder.type_icon.setIcon("cmd-home");
-        }
+        }*/
         if(pitem.getUrlprofile().equals("")){
             holder.profile_icon.setImageResource(R.drawable.account_circle);
-        } else{
+        } else if(pitem.getUrlprofile().equals("1")){
+            holder.profile_icon.setImageResource(R.drawable.account_plus);
+        }
+        else{
             Picasso.with(holder.profile_icon.getContext())
                     .load(pitem.getUrlprofile())
                     .placeholder(R.drawable.account_circle)
