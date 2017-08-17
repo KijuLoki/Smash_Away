@@ -16,12 +16,16 @@
         android:layout_alignParentLeft="true"
         android:layout_margin="0dp"
         android:id="@+id/image">
-        <com.mikepenz.iconics.view.IconicsImageView
+        <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/sort_filter"/>
+        <!--com.mikepenz.iconics.view.IconicsImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             app:iiv_color="@color/colorBlack"
             app:iiv_icon="cmd-filter"
-            android:id="@+id/type_icon"/>
+            android:id="@+id/type_icon"/-->
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,12 +66,16 @@
             android:layout_alignParentLeft="true"
             android:layout_margin="0dp"
             android:id="@+id/image2">
-            <com.mikepenz.iconics.view.IconicsImageView
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/sort_filter"/>
+            <!--com.mikepenz.iconics.view.IconicsImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 app:iiv_color="@color/colorBlack"
                 app:iiv_icon="cmd-filter"
-                android:id="@+id/type_icon2"/>
+                android:id="@+id/type_icon2"/-->
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -108,12 +116,16 @@
             android:layout_alignParentLeft="true"
             android:layout_margin="0dp"
             android:id="@+id/image3">
-            <com.mikepenz.iconics.view.IconicsImageView
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/sort_filter"/>
+            <!--com.mikepenz.iconics.view.IconicsImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 app:iiv_color="@color/colorBlack"
                 app:iiv_icon="cmd-filter"
-                android:id="@+id/type_icon3"/>
+                android:id="@+id/type_icon3"/-->
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -154,12 +166,16 @@
             android:layout_alignParentLeft="true"
             android:layout_margin="0dp"
             android:id="@+id/image4">
-            <com.mikepenz.iconics.view.IconicsImageView
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/sort_filter"/>
+            <!--com.mikepenz.iconics.view.IconicsImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 app:iiv_color="@color/colorBlack"
                 app:iiv_icon="cmd-filter"
-                android:id="@+id/type_icon4"/>
+                android:id="@+id/type_icon4"/-->
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -201,12 +217,16 @@
             android:layout_alignParentLeft="true"
             android:layout_margin="0dp"
             android:id="@+id/image5">
-            <com.mikepenz.iconics.view.IconicsImageView
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/sort_filter"/>
+            <!--com.mikepenz.iconics.view.IconicsImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 app:iiv_color="@color/colorBlack"
                 app:iiv_icon="cmd-filter"
-                android:id="@+id/type_icon5"/>
+                android:id="@+id/type_icon5"/-->
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
