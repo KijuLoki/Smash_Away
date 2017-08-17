@@ -44,6 +44,14 @@
         <activity
             android:name=".CommunityActivity"
             android:label="@string/title_activity_community"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InviteActivity"
+            android:label="@string/title_activity_invite"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PledgePoolActivity"
+            android:label="@string/title_activity_pledge_pool"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -62,4 +62,6 @@
     </string-array>
     <string name="title_activity_alerts">AlertsActivity</string>
     <string name="title_activity_community">CommunityActivity</string>
+    <string name="title_activity_invite">InviteActivity</string>
+    <string name="title_activity_pledge_pool">PledgePoolActivity</string>
 </resources>

@@ -11,4 +11,9 @@
     <color name="clo1">#F7941D</color>
     <color name="clo2">#FF4351</color>
     <color name="clo3">#2D3099</color>
+    <color name="colorFacebook">#3B589E</color>
+    <color name="colorTwitter">#1DA1F3</color>
+    <color name="colorLinkedin">#0077B4</color>
+    <color name="colormail">#2E3087</color>
+    <color name="colorsendmail">#FA901A</color>
 </resources>

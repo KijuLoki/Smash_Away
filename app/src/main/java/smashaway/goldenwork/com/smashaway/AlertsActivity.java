@@ -265,6 +265,12 @@ public class AlertsActivity extends AppCompatActivity
             if(childPosition == 0){
                 gotoCommunityActivity();
             }
+            if(childPosition == 1){
+                gotoInviteActivity();
+            }
+            if(childPosition == 2){
+                gotoPledgePoolActivity();
+            }
         }
         return false;
     }
@@ -294,6 +300,14 @@ public class AlertsActivity extends AppCompatActivity
     }
     public void gotoDashboard(){
         Intent intent = new Intent(this, DashboardActivity.class);
+        startActivity(intent);
+    }
+    public void gotoInviteActivity(){
+        Intent intent = new Intent(this, InviteActivity.class);
+        startActivity(intent);
+    }
+    public void gotoPledgePoolActivity(){
+        Intent intent = new Intent(this, PledgePoolActivity.class);
         startActivity(intent);
     }
     public void openHome(View view) {
