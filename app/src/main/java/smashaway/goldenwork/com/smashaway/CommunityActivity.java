@@ -48,7 +48,7 @@ public class CommunityActivity extends AppCompatActivity
     CommunityAdapter myAdapter;
     List<PoolItem> pitemList;
     RelativeLayout openAlertRel;
-    IconicsImageView menu_icon;
+    IconicsImageView menu_icon, notif_icon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +66,22 @@ public class CommunityActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);*/
 
 
+        //Toolbar
+        menu_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
+        menu_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openDrawer(view);
+            }
+        });
+        notif_icon = (IconicsImageView)toolbar.findViewById(R.id.notif_icon);
+        notif_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoAlertsActivity();
+            }
+        });
+
         //initialize recyclerview
         recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
         // alert button
@@ -76,13 +92,7 @@ public class CommunityActivity extends AppCompatActivity
                 gotoAlertsActivity();
             }
         });
-        menu_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
-        menu_icon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDrawer(view);
-            }
-        });
+
         pitemList = new ArrayList<>();
         myAdapter = new CommunityAdapter(pitemList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -283,6 +293,11 @@ public class CommunityActivity extends AppCompatActivity
                 gotoPledgePoolActivity();
             }
         }
+        if(groupPosition == 1){
+            if(childPosition == 0){
+                gotoCurrentProjectActivity();
+            }
+        }
         return false;
     }
 
@@ -333,7 +348,10 @@ public class CommunityActivity extends AppCompatActivity
         gotoDashboard();
     }
 
-
+    public void gotoCurrentProjectActivity(){
+        Intent intent = new Intent(this, CurrentProjectsActivity.class);
+        startActivity(intent);
+    }
     public void openDrawer(View view) {
         if(drawer.isDrawerOpen(GravityCompat.START)){
             drawer.closeDrawer(GravityCompat.START); Log.e(TAG,"opened");

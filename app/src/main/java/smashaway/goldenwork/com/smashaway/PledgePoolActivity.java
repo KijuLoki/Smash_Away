@@ -46,7 +46,7 @@ public class PledgePoolActivity extends AppCompatActivity
     private ActionBarDrawerToggle actionBarDrawerToggle;
     PledgePoolAdapter myAdapter;
     List<PoolItem> pitemList;
-    IconicsImageView menu_icon;
+    IconicsImageView menu_icon, notif_icon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,9 +54,7 @@ public class PledgePoolActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-        //initialize recyclerview
-        recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
+        //Toolbar
         menu_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
         menu_icon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +62,18 @@ public class PledgePoolActivity extends AppCompatActivity
                 openDrawer(view);
             }
         });
+        notif_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
+        notif_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoAlertsActivity();
+            }
+        });
+
+
+        //initialize recyclerview
+        recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
+
         pitemList = new ArrayList<>();
         myAdapter = new PledgePoolAdapter(pitemList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -260,6 +270,11 @@ public class PledgePoolActivity extends AppCompatActivity
                 gotoPledgePoolActivity();
             }
         }
+        if(groupPosition == 1){
+            if(childPosition == 0){
+                gotoCurrentProjectActivity();
+            }
+        }
         return false;
     }
 
@@ -299,6 +314,14 @@ public class PledgePoolActivity extends AppCompatActivity
     }
     public void openHome(View view) {
         gotoDashboard();
+    }
+    public void gotoCurrentProjectActivity(){
+        Intent intent = new Intent(this, CurrentProjectsActivity.class);
+        startActivity(intent);
+    }
+    public void gotoAlertsActivity(){
+        Intent intent = new Intent(this, AlertsActivity.class);
+        startActivity(intent);
     }
     public void openDrawer(View view) {
         if(drawer.isDrawerOpen(GravityCompat.START)){

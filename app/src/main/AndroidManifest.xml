@@ -52,6 +52,10 @@
         <activity
             android:name=".PledgePoolActivity"
             android:label="@string/title_activity_pledge_pool"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CurrentProjectsActivity"
+            android:label="@string/title_activity_current_projects"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

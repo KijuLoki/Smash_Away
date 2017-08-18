@@ -338,6 +338,11 @@ public class DashboardActivity extends AppCompatActivity
                 gotoPledgePoolActivity();
             }
         }
+        if(groupPosition == 1){
+            if(childPosition == 0){
+                gotoCurrentProjectActivity();
+            }
+        }
         return false;
     }
 
@@ -387,6 +392,10 @@ public class DashboardActivity extends AppCompatActivity
 
     public void openHome(View view) {
         gotoHomeActivity();
+    }
+    public void gotoCurrentProjectActivity(){
+        Intent intent = new Intent(this, CurrentProjectsActivity.class);
+        startActivity(intent);
     }
 
 }
