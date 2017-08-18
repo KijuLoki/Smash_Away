@@ -396,6 +396,8 @@ public class CurrentProjectsActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoCommunityActivity(){
+        Intent intent = new Intent(this, CommunityActivity.class);
+        startActivity(intent);
     }
     public void gotoDashboard(){
         Intent intent = new Intent(this, DashboardActivity.class);

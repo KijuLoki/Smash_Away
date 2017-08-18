@@ -40,7 +40,7 @@ public class PledgePoolActivity extends AppCompatActivity
     private DrawerLayout drawer;
     Toolbar toolbar;
     RecyclerView recyclerview;
-    private String TAG = "COMMUNITY";
+    private String TAG = "PPAct";
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     private ActionBarDrawerToggle actionBarDrawerToggle;
@@ -62,11 +62,11 @@ public class PledgePoolActivity extends AppCompatActivity
                 openDrawer(view);
             }
         });
-        notif_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
+        notif_icon = (IconicsImageView)toolbar.findViewById(R.id.notif_icon);
         notif_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoAlertsActivity();
+                gotoAlertsActivity(); Log.e(TAG, "notif_clicked");
             }
         });
 
