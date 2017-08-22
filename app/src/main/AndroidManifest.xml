@@ -56,6 +56,22 @@
         <activity
             android:name=".CurrentProjectsActivity"
             android:label="@string/title_activity_current_projects"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SuggestionActivity"
+            android:label="@string/title_activity_suggestion"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PersonalPPActivity"
+            android:label="@string/title_activity_personal_pp"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CommunityQAActivity"
+            android:label="@string/title_activity_community_qa"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SmashProfitsActivity"
+            android:label="@string/title_activity_smash_profits"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -65,4 +65,8 @@
     <string name="title_activity_invite">InviteActivity</string>
     <string name="title_activity_pledge_pool">PledgePoolActivity</string>
     <string name="title_activity_current_projects">CurrentProjectsActivity</string>
+    <string name="title_activity_suggestion">SuggestionActivity</string>
+    <string name="title_activity_personal_pp">PersonalPPActivity</string>
+    <string name="title_activity_community_qa">CommunityQAActivity</string>
+    <string name="title_activity_smash_profits">SmashProfitsActivity</string>
 </resources>

@@ -71,6 +71,7 @@ public class DashboardActivity extends AppCompatActivity
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     RelativeLayout openAlertRel;
+    LinearLayout q1, q2, q3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,22 +105,32 @@ public class DashboardActivity extends AppCompatActivity
         recyclerview.setLayoutManager(mLayoutManager);
         recyclerview.setItemAnimator(new DefaultItemAnimator());
         recyclerview.setAdapter(myAdapter);
-        /*for (int i = 0; i < toolbar.getChildCount(); i++) {
-            if(toolbar.getChildAt(i) instanceof Button){
-                Log.e(TAG, "found Button");
+        q1 = (LinearLayout)findViewById(R.id.q1);
+        q2 = (LinearLayout)findViewById(R.id.q2);
+        q3 = (LinearLayout)findViewById(R.id.q3);
+        q1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSmashProfitsActivity();
             }
-            if(toolbar.getChildAt(i) instanceof ImageView){
-                Log.e(TAG, "found ImageView");
+        });
+        q2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSmashProfitsActivity();
             }
-            if(toolbar.getChildAt(i) instanceof ImageButton){
-                Log.e(TAG, "found ImageButton");
-                toolbar.getChildAt(i).setScaleX(5f);
-                toolbar.getChildAt(i).setScaleY(5f);
+        });
+        q3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSmashProfitsActivity();
             }
-        }*/
+        });
         initDashbord();
         initDrawer();
     }
+
+
 
     private void initDashbord() {
         //initialize Chart
@@ -342,6 +353,12 @@ public class DashboardActivity extends AppCompatActivity
             if(childPosition == 0){
                 gotoCurrentProjectActivity();
             }
+            if(childPosition == 2){
+                gotoSuggestionActivity();
+            }
+            if(childPosition == 3){
+                gotoCommunityQAActivity();
+            }
         }
         return false;
     }
@@ -397,5 +414,16 @@ public class DashboardActivity extends AppCompatActivity
         Intent intent = new Intent(this, CurrentProjectsActivity.class);
         startActivity(intent);
     }
-
+    public void gotoSuggestionActivity(){
+        Intent intent = new Intent(this, SuggestionActivity.class);
+        startActivity(intent);
+    }
+    public void gotoCommunityQAActivity(){
+        Intent intent = new Intent(this, CommunityQAActivity.class);
+        startActivity(intent);
+    }
+    private void gotoSmashProfitsActivity() {
+        Intent intent = new Intent(this, SmashProfitsActivity.class);
+        startActivity(intent);
+    }
 }

@@ -5,9 +5,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +17,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.iconics.view.IconicsImageView;
@@ -30,42 +29,40 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import smashaway.goldenwork.com.smashaway.Adapters.CommunityAdapter;
 import smashaway.goldenwork.com.smashaway.Adapters.NavAdapter;
 import smashaway.goldenwork.com.smashaway.BClass.PoolItem;
 
-public class CommunityActivity extends AppCompatActivity
+public class CommunityQAActivity extends AppCompatActivity
         implements ExpandableListView.OnChildClickListener {
 
     private ExpandableListView drawerList;
     private DrawerLayout drawer;
     Toolbar toolbar;
-    RecyclerView recyclerview;
     private String TAG = "COMMUNITY";
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     private ActionBarDrawerToggle actionBarDrawerToggleCom;
-    CommunityAdapter myAdapter;
     List<PoolItem> pitemList;
     RelativeLayout openAlertRel;
-    IconicsImageView menu_icon, notif_icon;
+    IconicsImageView menu_icon,notif_icon;
+    LinearLayout head0, head1,head2,head3, sub00, sub10, sub20, sub21, sub22, sub30,  sub200,sub210,sub220, choice, input0;
+    IconicsImageView house_icon0, house_icon1,house_icon2, house_icon3, house_icon20, house_icon21, house_icon22;
+    boolean open0= false, open1=false, open2 =false, open3=false,open20=false, open21=false, open22=false;
+    TextView lblListHeaderchoice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_community);
+        setContentView(R.layout.activity_community_qa);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-       /* DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
-
-
+        // alert button
+        openAlertRel = (RelativeLayout)toolbar.findViewById(R.id.openAlert);
+        openAlertRel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoAlertsActivity();
+            }
+        });
         //Toolbar
         menu_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
         menu_icon.setOnClickListener(new View.OnClickListener() {
@@ -81,28 +78,243 @@ public class CommunityActivity extends AppCompatActivity
                 gotoAlertsActivity();
             }
         });
+        house_icon0 = (IconicsImageView)findViewById(R.id.house_icon0);
+        house_icon1 = (IconicsImageView)findViewById(R.id.house_icon1);
+        house_icon2 = (IconicsImageView)findViewById(R.id.house_icon2);
+        house_icon3 = (IconicsImageView)findViewById(R.id.house_icon3);
+        house_icon20 = (IconicsImageView)findViewById(R.id.house_icon20);
+        house_icon21 = (IconicsImageView)findViewById(R.id.house_icon21);
+        house_icon22 = (IconicsImageView)findViewById(R.id.house_icon22);
+        lblListHeaderchoice = (TextView)findViewById(R.id.lblListHeaderchoice);
 
-        //initialize recyclerview
-        recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
-        // alert button
-        openAlertRel = (RelativeLayout)toolbar.findViewById(R.id.openAlert);
-        openAlertRel.setOnClickListener(new View.OnClickListener() {
+        head0 = (LinearLayout)findViewById(R.id.head0);
+        sub00 = (LinearLayout)findViewById(R.id.sub00);
+        sub00.setVisibility(View.GONE);
+        head1 = (LinearLayout)findViewById(R.id.head1);
+        sub10 = (LinearLayout)findViewById(R.id.sub10);
+        sub10.setVisibility(View.GONE);
+        head2 = (LinearLayout)findViewById(R.id.head2);
+        sub20 = (LinearLayout)findViewById(R.id.sub20);
+        sub20.setVisibility(View.GONE);
+        sub200 = (LinearLayout)findViewById(R.id.sub200);
+        sub200.setVisibility(View.GONE);
+        sub21 = (LinearLayout)findViewById(R.id.sub21);
+        sub21.setVisibility(View.GONE);
+        sub210 = (LinearLayout)findViewById(R.id.sub210);
+        sub210.setVisibility(View.GONE);
+        sub22 = (LinearLayout)findViewById(R.id.sub22);
+        sub22.setVisibility(View.GONE);
+        sub220 = (LinearLayout)findViewById(R.id.sub220);
+        sub220.setVisibility(View.GONE);
+        head3 = (LinearLayout)findViewById(R.id.head3);
+        sub30 = (LinearLayout)findViewById(R.id.sub30);
+        sub30.setVisibility(View.GONE);
+        choice = (LinearLayout)findViewById(R.id.choice);
+        choice.setVisibility(View.GONE);
+        input0 = (LinearLayout)findViewById(R.id.input0);
+        input0.setVisibility(View.GONE);
+        head0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoAlertsActivity();
+                if(open0){
+                    hideView0(sub00);
+                } else{
+                    showView0(sub00);
+                }
+
             }
         });
+        head1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(open1){
+                    hideView1(sub10);
+                } else{
+                    showView1(sub10);
+                }
 
-        pitemList = new ArrayList<>();
-        myAdapter = new CommunityAdapter(pitemList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerview.setLayoutManager(mLayoutManager);
-        recyclerview.setItemAnimator(new DefaultItemAnimator());
-        recyclerview.setAdapter(myAdapter);
+            }
+        });
+        head3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(open3){
+                    hideView3(sub30);
+                } else{
+                    showView3(sub30);
+                }
+
+            }
+        });
+        head2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(open2){
+                    hideView2(sub20, sub21, sub22);
+                    Log.e(TAG, "head2 clicked");
+                } else{
+                    showView2(sub20, sub21, sub22);Log.e(TAG, "head2 clicked closed");
+                }
+
+            }
+        });
+        sub20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(open20){
+                    sub200.setVisibility(View.GONE);
+                    open20 = false;
+                    house_icon20.setColorRes(R.color.colorBlack);
+                } else{
+                    sub200.setVisibility(View.VISIBLE);
+                    open20 = true;
+                    house_icon20.setColorRes(R.color.colorAccent);
+                }
+
+            }
+        });
+        sub21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(open21){
+                    sub210.setVisibility(View.GONE);
+                    open21 = false;
+                    house_icon21.setColorRes(R.color.colorBlack);
+                } else{
+                    sub210.setVisibility(View.VISIBLE);
+                    open21 = true;
+                    house_icon21.setColorRes(R.color.colorAccent);
+                }
+
+            }
+        });
+        sub22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(open22){
+                    sub220.setVisibility(View.GONE);
+                    open22 = false;
+                    house_icon22.setColorRes(R.color.colorBlack);
+                } else{
+                    sub220.setVisibility(View.VISIBLE);
+                    open22 = true;
+                    house_icon22.setColorRes(R.color.colorAccent);
+                }
+
+            }
+        });
+        sub00.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViews("Processes");
+            }
+        });
+        sub10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViews("Website");
+            }
+        });
+        sub200.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViews("Mobile Application - User friendliness");
+            }
+        });
+        sub210.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViews("Mobile Application - Performance");
+            }
+        });
+        sub220.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViews("Mobile Application - Features");
+            }
+        });
+        sub30.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openViews("Other");
+            }
+        });
         initDashbord();
         initDrawer();
     }
+    private void openViews(String other) {
+        choice.setVisibility(View.VISIBLE);
+        input0.setVisibility(View.VISIBLE);
+        lblListHeaderchoice.setText(other);
+        hideView0(sub00);
+        hideView1(sub10);
+        hideView2(sub20, sub21, sub22);Log.e(TAG, "head2 clicked");
+        hideView3(sub30);
+    }
+    private void hideViews(){
+        choice.setVisibility(View.GONE);
+        input0.setVisibility(View.GONE);
+    }
 
+    private void showView2(LinearLayout sub20, LinearLayout sub21, LinearLayout sub22) {
+        sub20.setVisibility(View.VISIBLE);
+        sub21.setVisibility(View.VISIBLE);
+        sub22.setVisibility(View.VISIBLE);
+        house_icon2.setColorRes(R.color.colorAccent);
+        open2 = true;
+        hideViews();
+    }
+    private void hideView2(LinearLayout sub20, LinearLayout sub21, LinearLayout sub22) {
+        sub20.setVisibility(View.GONE);
+        sub21.setVisibility(View.GONE);
+        sub22.setVisibility(View.GONE);
+        sub200.setVisibility(View.GONE);
+        sub210.setVisibility(View.GONE);
+        sub220.setVisibility(View.GONE);
+        house_icon2.setColorRes(R.color.colorBlack);
+        house_icon20.setColorRes(R.color.colorBlack);
+        house_icon21.setColorRes(R.color.colorBlack);
+        house_icon22.setColorRes(R.color.colorBlack);
+        open20 = false;
+        open21=false;
+        open22=false;
+        open2=false;
+    }
+    private void showView0(LinearLayout sub00) {
+        sub00.setVisibility(View.VISIBLE);
+        house_icon0.setColorRes(R.color.colorAccent);
+        open0 = true;
+        hideViews();
+    }
+    private void hideView0(LinearLayout sub00) {
+        sub00.setVisibility(View.GONE);
+        house_icon0.setColorRes(R.color.colorBlack);
+        open0=false;
+    }
+
+    private void showView1(LinearLayout sub10) {
+        sub10.setVisibility(View.VISIBLE);
+        house_icon1.setColorRes(R.color.colorAccent);
+        open1 = true;
+        hideViews();
+    }
+    private void hideView1(LinearLayout sub10) {
+        sub10.setVisibility(View.GONE);
+        house_icon1.setColorRes(R.color.colorBlack);
+        open1=false;
+    }
+
+    private void showView3(LinearLayout sub30) {
+        sub30.setVisibility(View.VISIBLE);
+        house_icon3.setColorRes(R.color.colorAccent);
+        open3 = true;
+        hideViews();
+    }
+    private void hideView3(LinearLayout sub30) {
+        sub30.setVisibility(View.GONE);
+        house_icon3.setColorRes(R.color.colorBlack);
+        open3=false;
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -116,7 +328,7 @@ public class CommunityActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.community, menu);
+        getMenuInflater().inflate(R.menu.community_qa, menu);
         return true;
     }
 
@@ -136,32 +348,10 @@ public class CommunityActivity extends AppCompatActivity
     }
 
     private void initDashbord() {
-
-
         //set fake data for recyclerView
-        //(int id, String name, String ustensile, String type, String dateclaim, String urlprofile)
-        PoolItem p = new PoolItem(0,"Alicia","Audi Q5 (accident)", "car", "No claims for this semester yet!","http://gpluseurope.com/wp-content/uploads/Website2016-Profile-Photos-Aurelie-Caulier.jpg");
-        pitemList.add(p);
-        p = new PoolItem(1,"Theresa","iPhone (theft)", "heart", "2 claims so far this semester","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(2,"Linda","Guitar (theft)", "heart", "Subtitle","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(3,"Dieter","Geyser (damage)", "house", "1 claim so far this semester","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(4,"Christo","Various items (break-in)", "house", "5 claims so far this semester","https://d2fijpsef22722.cloudfront.net/photos/pd_portrait_big/348636407-the-side-roads-with-peek-s-co-founder---cto.jpg");
-        pitemList.add(p);
-        p = new PoolItem(5,"Ruan","Various items (break-in)", "house", "No claims for this semester yet!","https://d2fijpsef22722.cloudfront.net/photos/pd_portrait_big/348636407-the-side-roads-with-peek-s-co-founder---cto.jpg");
-        pitemList.add(p);
-        p = new PoolItem(6,"John","Guitar (theft)", "heart", "2 claims so far this semester","");
-        pitemList.add(p);
-        p = new PoolItem(7,"Vacant - invite someone?","Geyser (damage)", "house", "","1");
-        pitemList.add(p);
-        p = new PoolItem(8,"Vacant - invite someone?","Various items (break-in)", "house", "","1");
-        pitemList.add(p);
-        p = new PoolItem(9,"Vacant - invite someone?","Various items (break-in)", "house", "","1");
-        pitemList.add(p);
-        Log.e(TAG, String.valueOf(pitemList.size()));
-        myAdapter.notifyDataSetChanged();
+
+
+
 
         initDrawer();
     }
@@ -337,6 +527,8 @@ public class CommunityActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoCommunityActivity(){
+        Intent intent = new Intent(this, CommunityActivity.class);
+        startActivity(intent);
     }
     public void gotoDashboard(){
         Intent intent = new Intent(this, DashboardActivity.class);

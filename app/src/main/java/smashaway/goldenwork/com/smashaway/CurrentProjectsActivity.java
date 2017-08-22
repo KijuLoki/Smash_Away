@@ -362,6 +362,12 @@ public class CurrentProjectsActivity extends AppCompatActivity
             if(childPosition == 0){
                 gotoCurrentProjectActivity();
             }
+            if(childPosition == 2){
+                gotoSuggestionActivity();
+            }
+            if(childPosition == 3){
+                gotoCommunityQAActivity();
+            }
         }
         return false;
     }
@@ -417,6 +423,14 @@ public class CurrentProjectsActivity extends AppCompatActivity
 
     public void gotoCurrentProjectActivity(){
 
+    }
+    public void gotoSuggestionActivity(){
+        Intent intent = new Intent(this, SuggestionActivity.class);
+        startActivity(intent);
+    }
+    public void gotoCommunityQAActivity(){
+        Intent intent = new Intent(this, CommunityQAActivity.class);
+        startActivity(intent);
     }
     public void openDrawer(View view) {
         if(drawer.isDrawerOpen(GravityCompat.START)){

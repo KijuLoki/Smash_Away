@@ -5,9 +5,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -23,49 +20,55 @@ import android.widget.ExpandableListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.mikepenz.iconics.view.IconicsImageView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
-import smashaway.goldenwork.com.smashaway.Adapters.CommunityAdapter;
 import smashaway.goldenwork.com.smashaway.Adapters.NavAdapter;
 import smashaway.goldenwork.com.smashaway.BClass.PoolItem;
 
-public class CommunityActivity extends AppCompatActivity
-        implements ExpandableListView.OnChildClickListener {
+public class SmashProfitsActivity extends AppCompatActivity
+        implements ExpandableListView.OnChildClickListener  {
 
     private ExpandableListView drawerList;
     private DrawerLayout drawer;
+    LineChart chart;
     Toolbar toolbar;
-    RecyclerView recyclerview;
     private String TAG = "COMMUNITY";
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     private ActionBarDrawerToggle actionBarDrawerToggleCom;
-    CommunityAdapter myAdapter;
     List<PoolItem> pitemList;
     RelativeLayout openAlertRel;
-    IconicsImageView menu_icon, notif_icon;
+    IconicsImageView menu_icon,notif_icon;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_community);
+        setContentView(R.layout.activity_smash_profits);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-       /* DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
 
 
+        // alert button
+        openAlertRel = (RelativeLayout)toolbar.findViewById(R.id.openAlert);
+        openAlertRel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoAlertsActivity();
+            }
+        });
         //Toolbar
         menu_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
         menu_icon.setOnClickListener(new View.OnClickListener() {
@@ -81,27 +84,9 @@ public class CommunityActivity extends AppCompatActivity
                 gotoAlertsActivity();
             }
         });
-
-        //initialize recyclerview
-        recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
-        // alert button
-        openAlertRel = (RelativeLayout)toolbar.findViewById(R.id.openAlert);
-        openAlertRel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotoAlertsActivity();
-            }
-        });
-
-        pitemList = new ArrayList<>();
-        myAdapter = new CommunityAdapter(pitemList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerview.setLayoutManager(mLayoutManager);
-        recyclerview.setItemAnimator(new DefaultItemAnimator());
-        recyclerview.setAdapter(myAdapter);
+        chart = (LineChart) findViewById(R.id.chart);
         initDashbord();
-        initDrawer();
-    }
+     }
 
     @Override
     public void onBackPressed() {
@@ -116,7 +101,7 @@ public class CommunityActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.community, menu);
+        getMenuInflater().inflate(R.menu.smash_profits, menu);
         return true;
     }
 
@@ -136,32 +121,44 @@ public class CommunityActivity extends AppCompatActivity
     }
 
     private void initDashbord() {
+        //initialize Chart
+        List<String> listMonths = new ArrayList<>();
+        List<Integer> listvalues = new ArrayList<>();
+        List<Entry> entries = new ArrayList<Entry>();
+        Random r = new Random();
+        for (int i =0; i<12;i++){
+            entries.add(new Entry((float)(i), (float)(r.nextInt(1000))));
+        }
+        LineDataSet dataSet = new LineDataSet(entries, "Your profit build-up");
+        LineData lineData = new LineData(dataSet);
+        chart.setData(lineData);
+        //chart.setDrawGridBackground(false);
+        //chart.setDrawBorders(false);
+        //chart set axis labal
+        // the labels that should be drawn on the XAxis
+        final String[] quarters = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug", "Sep", "Oct", "Nov", "Dec" };
+
+        IAxisValueFormatter formatter = new IAxisValueFormatter() {
+
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return quarters[(int) value];
+            }
+        };
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setGranularity(1f); // minimum axis-step (interval) is 1
+        xAxis.setValueFormatter(formatter);
+        xAxis.setDrawGridLines(false);
+        chart.getAxisRight().setEnabled(false);
+        YAxis leftAxis = chart.getAxisLeft();
+        leftAxis.setDrawGridLines(false);
+
+        chart.invalidate();
 
 
-        //set fake data for recyclerView
-        //(int id, String name, String ustensile, String type, String dateclaim, String urlprofile)
-        PoolItem p = new PoolItem(0,"Alicia","Audi Q5 (accident)", "car", "No claims for this semester yet!","http://gpluseurope.com/wp-content/uploads/Website2016-Profile-Photos-Aurelie-Caulier.jpg");
-        pitemList.add(p);
-        p = new PoolItem(1,"Theresa","iPhone (theft)", "heart", "2 claims so far this semester","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(2,"Linda","Guitar (theft)", "heart", "Subtitle","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(3,"Dieter","Geyser (damage)", "house", "1 claim so far this semester","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(4,"Christo","Various items (break-in)", "house", "5 claims so far this semester","https://d2fijpsef22722.cloudfront.net/photos/pd_portrait_big/348636407-the-side-roads-with-peek-s-co-founder---cto.jpg");
-        pitemList.add(p);
-        p = new PoolItem(5,"Ruan","Various items (break-in)", "house", "No claims for this semester yet!","https://d2fijpsef22722.cloudfront.net/photos/pd_portrait_big/348636407-the-side-roads-with-peek-s-co-founder---cto.jpg");
-        pitemList.add(p);
-        p = new PoolItem(6,"John","Guitar (theft)", "heart", "2 claims so far this semester","");
-        pitemList.add(p);
-        p = new PoolItem(7,"Vacant - invite someone?","Geyser (damage)", "house", "","1");
-        pitemList.add(p);
-        p = new PoolItem(8,"Vacant - invite someone?","Various items (break-in)", "house", "","1");
-        pitemList.add(p);
-        p = new PoolItem(9,"Vacant - invite someone?","Various items (break-in)", "house", "","1");
-        pitemList.add(p);
-        Log.e(TAG, String.valueOf(pitemList.size()));
-        myAdapter.notifyDataSetChanged();
+
 
         initDrawer();
     }
@@ -299,10 +296,10 @@ public class CommunityActivity extends AppCompatActivity
             }
             if(childPosition == 2){
                 gotoSuggestionActivity();
-            }
-            if(childPosition == 3){
+            }            if(childPosition == 3){
                 gotoCommunityQAActivity();
             }
+
         }
         return false;
     }
@@ -337,6 +334,8 @@ public class CommunityActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoCommunityActivity(){
+        Intent intent = new Intent(this, CommunityActivity.class);
+        startActivity(intent);
     }
     public void gotoDashboard(){
         Intent intent = new Intent(this, DashboardActivity.class);
@@ -359,8 +358,7 @@ public class CommunityActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoSuggestionActivity(){
-        Intent intent = new Intent(this, SuggestionActivity.class);
-        startActivity(intent);
+
     }
     public void gotoCommunityQAActivity(){
         Intent intent = new Intent(this, CommunityQAActivity.class);

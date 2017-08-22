@@ -274,6 +274,12 @@ public class PledgePoolActivity extends AppCompatActivity
             if(childPosition == 0){
                 gotoCurrentProjectActivity();
             }
+            if(childPosition == 2){
+                gotoSuggestionActivity();
+            }
+            if(childPosition == 3){
+                gotoCommunityQAActivity();
+            }
         }
         return false;
     }
@@ -321,6 +327,14 @@ public class PledgePoolActivity extends AppCompatActivity
     }
     public void gotoAlertsActivity(){
         Intent intent = new Intent(this, AlertsActivity.class);
+        startActivity(intent);
+    }
+    public void gotoSuggestionActivity(){
+        Intent intent = new Intent(this, SuggestionActivity.class);
+        startActivity(intent);
+    }
+    public void gotoCommunityQAActivity(){
+        Intent intent = new Intent(this, CommunityQAActivity.class);
         startActivity(intent);
     }
     public void openDrawer(View view) {

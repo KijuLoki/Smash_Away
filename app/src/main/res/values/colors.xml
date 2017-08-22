@@ -16,4 +16,5 @@
     <color name="colorLinkedin">#0077B4</color>
     <color name="colormail">#2E3087</color>
     <color name="colorsendmail">#FA901A</color>
+    <color name="colorTrans">#00FFFFFF</color>
 </resources>
