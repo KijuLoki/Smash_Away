@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:background="@drawable/borderlines"
+        android:padding="10dp"
+        android:id="@+id/head4">
+        <TextView
+            android:id="@+id/lblListHeader4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Social details"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_weight="6"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/list_details_size"/>
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="center">
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                app:iiv_color="@color/colorBlack"
+                app:iiv_icon="cmd-chevron-down"
+                android:id="@+id/house_icon4"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:background="@drawable/borderlines"
+        android:padding="10dp"
+        android:id="@+id/sub40">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="vertical"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true">
+            <TextView
+                android:id="@+id/lblListHeader400"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Emergency Contact"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/list_details_size_sub"/>
+            <TextView
+                android:id="@+id/lblListHeader401"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Please supply"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorGrey1"
+                android:textSize="@dimen/list_details_size_sub"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true">
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:text="!"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_corner" />
+            </LinearLayout>
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:iiv_color="@color/colorGrey1"
+                app:iiv_icon="cmd-pencil"
+                android:id="@+id/house_icon40"
+                android:layout_weight="1"
+                app:iiv_size="25dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:background="@drawable/borderlines"
+        android:padding="10dp"
+        android:id="@+id/sub41">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="vertical"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true">
+            <TextView
+                android:id="@+id/lblListHeader410"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="facebook"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/list_details_size_sub"/>
+            <TextView
+                android:id="@+id/lblListHeader411"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="johan.lombard.773"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorGrey1"
+                android:textSize="@dimen/list_details_size_sub"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true">
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <!--TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="!"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_corner" /-->
+            </LinearLayout>
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:iiv_color="@color/colorGrey1"
+                app:iiv_icon="cmd-link"
+                android:id="@+id/house_icon41"
+                android:layout_weight="1"
+                app:iiv_size="25dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:background="@drawable/borderlines"
+        android:padding="10dp"
+        android:id="@+id/sub42">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="vertical"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true">
+            <TextView
+                android:id="@+id/lblListHeader420"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="linkedin"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/list_details_size_sub"/>
+            <TextView
+                android:id="@+id/lblListHeader421"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Please supply to invite associates"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorGrey1"
+                android:textSize="@dimen/list_details_size_sub"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true">
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:text="!"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_corner"
+                    android:layout_toRightOf="@+id/lblListItem" />
+            </LinearLayout>
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:iiv_color="@color/colorGrey1"
+                app:iiv_icon="cmd-link"
+                android:id="@+id/house_icon42"
+                android:layout_weight="1"
+                app:iiv_size="25dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left"
+        android:background="@drawable/borderlines"
+        android:padding="10dp"
+        android:id="@+id/sub43">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="vertical"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true">
+            <TextView
+                android:id="@+id/lblListHeader430"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="twitter"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/list_details_size_sub"/>
+            <TextView
+                android:id="@+id/lblListHeader431"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="\@fortunatejohan"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:layout_weight="6"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorGrey1"
+                android:textSize="@dimen/list_details_size_sub"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:gravity="right"
+            android:layout_gravity="right"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true">
+            <LinearLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <!--TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="!"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:gravity="center"
+                    android:background="@drawable/rounded_corner" /-->
+            </LinearLayout>
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:iiv_color="@color/colorGrey1"
+                app:iiv_icon="cmd-link"
+                android:id="@+id/house_icon43"
+                android:layout_weight="1"
+                app:iiv_size="25dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

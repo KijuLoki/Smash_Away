@@ -356,6 +356,20 @@ public class PersonalPPActivity extends AppCompatActivity
                 gotoCommunityQAActivity();
             }
         }
+        if(groupPosition == 2){
+            if(childPosition == 0){
+                gotoMydetailsActivity();
+            }
+            if(childPosition == 1){
+                gotoAddRemoveActivity();
+            }
+            if(childPosition == 2){
+                gotoTodoActivity();
+            }
+            if(childPosition == 4){
+                gotoCorrespondenceActivity();
+            }
+        }
         return false;
     }
 
@@ -419,7 +433,19 @@ public class PersonalPPActivity extends AppCompatActivity
         Intent intent = new Intent(this, CommunityQAActivity.class);
         startActivity(intent);
     }
+    public void gotoAddRemoveActivity(){
 
+    }
+    public void gotoMydetailsActivity(){
+        Intent intent = new Intent(this, MyDetailsActivity.class);
+        startActivity(intent);
+    }
+    public void gotoTodoActivity(){
+
+    }
+    public void gotoCorrespondenceActivity(){
+
+    }
     public void openDrawer(View view) {
         if(drawer.isDrawerOpen(GravityCompat.START)){
             drawer.closeDrawer(GravityCompat.START); Log.e(TAG,"opened");

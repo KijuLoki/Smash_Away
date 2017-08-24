@@ -360,6 +360,20 @@ public class DashboardActivity extends AppCompatActivity
                 gotoCommunityQAActivity();
             }
         }
+        if(groupPosition == 2){
+            if(childPosition == 0){
+                gotoMydetailsActivity();
+            }
+            if(childPosition == 1){
+                gotoAddRemoveActivity();
+            }
+            if(childPosition == 2){
+                gotoTodoActivity();
+            }
+            if(childPosition == 4){
+                gotoCorrespondenceActivity();
+            }
+        }
         return false;
     }
 
@@ -425,5 +439,18 @@ public class DashboardActivity extends AppCompatActivity
     private void gotoSmashProfitsActivity() {
         Intent intent = new Intent(this, SmashProfitsActivity.class);
         startActivity(intent);
+    }
+    public void gotoAddRemoveActivity(){
+
+    }
+    public void gotoMydetailsActivity(){
+        Intent intent = new Intent(this, MyDetailsActivity.class);
+        startActivity(intent);
+    }
+    public void gotoTodoActivity(){
+
+    }
+    public void gotoCorrespondenceActivity(){
+
     }
 }

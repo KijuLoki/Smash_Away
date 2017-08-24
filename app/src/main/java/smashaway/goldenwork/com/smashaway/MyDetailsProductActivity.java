@@ -1,13 +1,11 @@
 package smashaway.goldenwork.com.smashaway;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -20,12 +18,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.iconics.view.IconicsImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,12 +33,13 @@ import java.util.HashMap;
 import java.util.List;
 
 import smashaway.goldenwork.com.smashaway.Adapters.NavAdapter;
-import smashaway.goldenwork.com.smashaway.Adapters.PledgePoolAdapter;
 import smashaway.goldenwork.com.smashaway.BClass.PoolItem;
+import smashaway.goldenwork.com.smashaway.helpers.CircleTransform;
 
-public class SuggestionActivity extends AppCompatActivity
-        implements ExpandableListView.OnChildClickListener {
+public class MyDetailsProductActivity extends AppCompatActivity
+        implements ExpandableListView.OnChildClickListener  {
 
+    SharedPreferences sm_pref;
     private ExpandableListView drawerList;
     private DrawerLayout drawer;
     Toolbar toolbar;
@@ -49,16 +50,24 @@ public class SuggestionActivity extends AppCompatActivity
     List<PoolItem> pitemList;
     RelativeLayout openAlertRel;
     IconicsImageView menu_icon,notif_icon;
-    LinearLayout head0, head1,head2,head3, sub00, sub10, sub20, sub21, sub22, sub30,  sub200,sub210,sub220, choice, input0;
-    IconicsImageView house_icon0, house_icon1,house_icon2, house_icon3, house_icon20, house_icon21, house_icon22;
-    boolean open0= false, open1=false, open2 =false, open3=false,open20=false, open21=false, open22=false;
-    TextView lblListHeaderchoice;
+    String user = "";
+    String user_pic ="";
+    ImageView profile_icon;
+    TextView title, lblListHeader60;
+    LinearLayout head6, sub6, head5, sub50, sub51;
+    IconicsImageView house_icon6, house_icon5;
+    boolean open6= false, open5= false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suggestion);
+        setContentView(R.layout.activity_my_details_product);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        user = "UserName";
+        user_pic = "http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png";
+        title = (TextView)findViewById(R.id.title);
+        profile_icon = (ImageView)findViewById(R.id.profile_icon);
 
         // alert button
         openAlertRel = (RelativeLayout)toolbar.findViewById(R.id.openAlert);
@@ -83,242 +92,52 @@ public class SuggestionActivity extends AppCompatActivity
                 gotoAlertsActivity();
             }
         });
-        house_icon0 = (IconicsImageView)findViewById(R.id.house_icon0);
-        house_icon1 = (IconicsImageView)findViewById(R.id.house_icon1);
-        house_icon2 = (IconicsImageView)findViewById(R.id.house_icon2);
-        house_icon3 = (IconicsImageView)findViewById(R.id.house_icon3);
-        house_icon20 = (IconicsImageView)findViewById(R.id.house_icon20);
-        house_icon21 = (IconicsImageView)findViewById(R.id.house_icon21);
-        house_icon22 = (IconicsImageView)findViewById(R.id.house_icon22);
-        lblListHeaderchoice = (TextView)findViewById(R.id.lblListHeaderchoice);
 
-        head0 = (LinearLayout)findViewById(R.id.head0);
-        sub00 = (LinearLayout)findViewById(R.id.sub00);
-        sub00.setVisibility(View.GONE);
-        head1 = (LinearLayout)findViewById(R.id.head1);
-        sub10 = (LinearLayout)findViewById(R.id.sub10);
-        sub10.setVisibility(View.GONE);
-        head2 = (LinearLayout)findViewById(R.id.head2);
-        sub20 = (LinearLayout)findViewById(R.id.sub20);
-        sub20.setVisibility(View.GONE);
-        sub200 = (LinearLayout)findViewById(R.id.sub200);
-        sub200.setVisibility(View.GONE);
-        sub21 = (LinearLayout)findViewById(R.id.sub21);
-        sub21.setVisibility(View.GONE);
-        sub210 = (LinearLayout)findViewById(R.id.sub210);
-        sub210.setVisibility(View.GONE);
-        sub22 = (LinearLayout)findViewById(R.id.sub22);
-        sub22.setVisibility(View.GONE);
-        sub220 = (LinearLayout)findViewById(R.id.sub220);
-        sub220.setVisibility(View.GONE);
-        head3 = (LinearLayout)findViewById(R.id.head3);
-        sub30 = (LinearLayout)findViewById(R.id.sub30);
-        sub30.setVisibility(View.GONE);
-        choice = (LinearLayout)findViewById(R.id.choice);
-        choice.setVisibility(View.GONE);
-        input0 = (LinearLayout)findViewById(R.id.input0);
-        input0.setVisibility(View.GONE);
-        head0.setOnClickListener(new View.OnClickListener() {
+//init content
+        head6 = (LinearLayout)findViewById(R.id.head6);
+        sub6 = (LinearLayout)findViewById(R.id.sub6);
+        lblListHeader60 = (TextView)findViewById(R.id.lblListHeader60);
+        house_icon6 = (IconicsImageView)findViewById(R.id.house_icon6);
+        house_icon5 = (IconicsImageView)findViewById(R.id.house_icon5);
+        sub6.setVisibility(View.GONE);
+        head5 = (LinearLayout)findViewById(R.id.head5);
+        sub50 = (LinearLayout)findViewById(R.id.sub50);
+        sub51 = (LinearLayout)findViewById(R.id.sub51);
+        sub50.setVisibility(View.GONE);
+        sub51.setVisibility(View.GONE);
+        head6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(open0){
-                    hideView0(sub00);
+                if(open6){
+                    sub6.setVisibility(View.GONE);
+                    house_icon6.setColorRes(R.color.colorBlack);
+                    open6 = false;
                 } else{
-                    showView0(sub00);
+                    sub6.setVisibility(View.VISIBLE);
+                    open6 = true;
+                    house_icon6.setColorRes(R.color.colorAccent);
                 }
-
             }
         });
-        head1.setOnClickListener(new View.OnClickListener() {
+        head5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(open1){
-                    hideView1(sub10);
+                if(open5){
+                    sub50.setVisibility(View.GONE);
+                    sub51.setVisibility(View.GONE);
+                    house_icon5.setColorRes(R.color.colorBlack);
+                    open5 = false;
                 } else{
-                    showView1(sub10);
+                    sub50.setVisibility(View.VISIBLE);
+                    sub51.setVisibility(View.VISIBLE);
+                    open5 = true;
+                    house_icon5.setColorRes(R.color.colorAccent);
                 }
+            }
+        });
 
-            }
-        });
-        head3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(open3){
-                    hideView3(sub30);
-                } else{
-                    showView3(sub30);
-                }
 
-            }
-        });
-        head2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(open2){
-                    hideView2(sub20, sub21, sub22);Log.e(TAG, "head2 clicked");
-                } else{
-                    showView2(sub20, sub21, sub22);Log.e(TAG, "head2 clicked closed");
-                }
-
-            }
-        });
-        sub20.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(open20){
-                    sub200.setVisibility(View.GONE);
-                    open20 = false;
-                    house_icon20.setColorRes(R.color.colorBlack);
-                } else{
-                    sub200.setVisibility(View.VISIBLE);
-                    open20 = true;
-                    house_icon20.setColorRes(R.color.colorAccent);
-                }
-
-            }
-        });
-        sub21.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(open21){
-                    sub210.setVisibility(View.GONE);
-                    open21 = false;
-                    house_icon21.setColorRes(R.color.colorBlack);
-                } else{
-                    sub210.setVisibility(View.VISIBLE);
-                    open21 = true;
-                    house_icon21.setColorRes(R.color.colorAccent);
-                }
-
-            }
-        });
-        sub22.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(open22){
-                    sub220.setVisibility(View.GONE);
-                    open22 = false;
-                    house_icon22.setColorRes(R.color.colorBlack);
-                } else{
-                    sub220.setVisibility(View.VISIBLE);
-                    open22 = true;
-                    house_icon22.setColorRes(R.color.colorAccent);
-                }
-
-            }
-        });
-        sub00.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openViews("Processes");
-            }
-        });
-        sub10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openViews("Website");
-            }
-        });
-        sub200.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openViews("Mobile Application - User friendliness");
-            }
-        });
-        sub210.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openViews("Mobile Application - Performance");
-            }
-        });
-        sub220.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openViews("Mobile Application - Features");
-            }
-        });
-        sub30.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openViews("Other");
-            }
-        });
         initDashbord();
-        initDrawer();
-    }
-
-    private void openViews(String other) {
-        choice.setVisibility(View.VISIBLE);
-        input0.setVisibility(View.VISIBLE);
-        lblListHeaderchoice.setText(other);
-        hideView0(sub00);
-        hideView1(sub10);
-        hideView2(sub20, sub21, sub22);Log.e(TAG, "head2 clicked");
-        hideView3(sub30);
-    }
-    private void hideViews(){
-        choice.setVisibility(View.GONE);
-        input0.setVisibility(View.GONE);
-    }
-
-    private void showView2(LinearLayout sub20, LinearLayout sub21, LinearLayout sub22) {
-        sub20.setVisibility(View.VISIBLE);
-        sub21.setVisibility(View.VISIBLE);
-        sub22.setVisibility(View.VISIBLE);
-        house_icon2.setColorRes(R.color.colorAccent);
-        open2 = true;
-        hideViews();
-    }
-    private void hideView2(LinearLayout sub20, LinearLayout sub21, LinearLayout sub22) {
-        sub20.setVisibility(View.GONE);
-        sub21.setVisibility(View.GONE);
-        sub22.setVisibility(View.GONE);
-        sub200.setVisibility(View.GONE);
-        sub210.setVisibility(View.GONE);
-        sub220.setVisibility(View.GONE);
-        house_icon2.setColorRes(R.color.colorBlack);
-        house_icon20.setColorRes(R.color.colorBlack);
-        house_icon21.setColorRes(R.color.colorBlack);
-        house_icon22.setColorRes(R.color.colorBlack);
-        open20 = false;
-        open21=false;
-        open22=false;
-        open2=false;
-    }
-    private void showView0(LinearLayout sub00) {
-        sub00.setVisibility(View.VISIBLE);
-        house_icon0.setColorRes(R.color.colorAccent);
-        open0 = true;
-        hideViews();
-    }
-    private void hideView0(LinearLayout sub00) {
-        sub00.setVisibility(View.GONE);
-        house_icon0.setColorRes(R.color.colorBlack);
-        open0=false;
-    }
-
-    private void showView1(LinearLayout sub10) {
-        sub10.setVisibility(View.VISIBLE);
-        house_icon1.setColorRes(R.color.colorAccent);
-        open1 = true;
-        hideViews();
-    }
-    private void hideView1(LinearLayout sub10) {
-        sub10.setVisibility(View.GONE);
-        house_icon1.setColorRes(R.color.colorBlack);
-        open1=false;
-    }
-
-    private void showView3(LinearLayout sub30) {
-        sub30.setVisibility(View.VISIBLE);
-        house_icon3.setColorRes(R.color.colorAccent);
-        open3 = true;
-        hideViews();
-    }
-    private void hideView3(LinearLayout sub30) {
-        sub30.setVisibility(View.GONE);
-        house_icon3.setColorRes(R.color.colorBlack);
-        open3=false;
     }
 
     @Override
@@ -334,7 +153,7 @@ public class SuggestionActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.suggestion, menu);
+        getMenuInflater().inflate(R.menu.my_details_product, menu);
         return true;
     }
 
@@ -353,12 +172,26 @@ public class SuggestionActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-
-
     private void initDashbord() {
         //set fake data for recyclerView
-
-
+        title.setText(user);
+        Picasso.with(this)
+                .load(user_pic)
+                .placeholder(R.drawable.account_circle)
+                .error(R.drawable.account_circle)
+                .transform(new CircleTransform())
+                .into(profile_icon );
+        String mytext = "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. \n";
+        mytext += "\u2022 Bullet"+"Contrary to popular belief, Lorem Ipsum is not simply random text. \n";
+        lblListHeader60.setText(mytext);
 
 
         initDrawer();
@@ -575,6 +408,10 @@ public class SuggestionActivity extends AppCompatActivity
     public void gotoSuggestionActivity(){
 
     }
+    public void gotoCommunityQAActivity(){
+        Intent intent = new Intent(this, CommunityQAActivity.class);
+        startActivity(intent);
+    }
     public void gotoAddRemoveActivity(){
 
     }
@@ -588,10 +425,6 @@ public class SuggestionActivity extends AppCompatActivity
     public void gotoCorrespondenceActivity(){
 
     }
-    public void gotoCommunityQAActivity(){
-        Intent intent = new Intent(this, CommunityQAActivity.class);
-        startActivity(intent);
-    }
     public void openDrawer(View view) {
         if(drawer.isDrawerOpen(GravityCompat.START)){
             drawer.closeDrawer(GravityCompat.START); Log.e(TAG,"opened");
@@ -599,4 +432,5 @@ public class SuggestionActivity extends AppCompatActivity
             drawer.openDrawer(GravityCompat.START);Log.e(TAG,"closed");
         }
     }
+
 }

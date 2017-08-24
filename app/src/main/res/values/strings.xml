@@ -69,4 +69,6 @@
     <string name="title_activity_personal_pp">PersonalPPActivity</string>
     <string name="title_activity_community_qa">CommunityQAActivity</string>
     <string name="title_activity_smash_profits">SmashProfitsActivity</string>
+    <string name="title_activity_my_details">MyDetailsActivity</string>
+    <string name="title_activity_my_details_product">MyDetailsProductActivity</string>
 </resources>

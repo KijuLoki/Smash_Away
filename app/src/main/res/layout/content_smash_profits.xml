@@ -169,6 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textshares2"
+
             android:text="Firstly, profits are all funds after claims and fixed 20% admin costs are paid. Your shares hereof are simply your premiums paid this semester multiplied by your CEM:"/>
         <include layout="@layout/personalpp_layout" />
         <LinearLayout
@@ -202,7 +203,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
+                android:layout_weight="4"
                 android:text="4"
                 android:gravity="end"
                 android:background="@drawable/borderlines_down_black"
@@ -224,7 +225,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
+                android:layout_weight="4"
                 android:text="34 567"
                 android:gravity="end"
                 android:background="@drawable/borderlines_down_black"
