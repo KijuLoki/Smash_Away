@@ -129,26 +129,6 @@
                 android:gravity="left"
                 android:background="@drawable/borderlines"
                 android:padding="10dp"
-                android:id="@+id/head2">
-                <TextView
-                    android:id="@+id/lblListHeader2"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:text="Regular driver: Johan Lombard"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:layout_weight="6"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/list_details_size"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="left"
-                android:background="@drawable/borderlines"
-                android:padding="10dp"
                 android:id="@+id/head3">
                 <TextView
                     android:id="@+id/lblListHeader3"
@@ -236,18 +216,7 @@
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/list_details_size"/>
-                <LinearLayout
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:gravity="center">
-                    <com.mikepenz.iconics.view.IconicsImageView
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        app:iiv_color="@color/colorBlack"
-                        app:iiv_icon="cmd-chevron-right"
-                        android:id="@+id/house_icon50"
-                        android:layout_weight="1"/>
-                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -266,7 +235,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:layout_weight="6"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/list_details_size"/>
                 <TextView
@@ -277,7 +246,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:layout_weight="6"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:textColor="@color/colorGrey1"
                     android:textSize="@dimen/list_details_size"/>
             </LinearLayout>
@@ -297,7 +266,7 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:layout_weight="6"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
+
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/list_details_size"/>
                 <LinearLayout
