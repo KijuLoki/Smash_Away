@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_add_remove_cover"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="smashaway.goldenwork.com.smashaway.AddRemoveCoverActivity"
+    tools:showIn="@layout/app_bar_add_remove_cover">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00111111"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"
+            android:alpha="0.2"/>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:background="@drawable/borderlines"
+                android:padding="10dp"
+                android:id="@+id/head1">
+
+                <TextView
+                    android:id="@+id/lblListHeader1"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Property"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/list_details_size"/>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        app:iiv_color="@color/colorBlack"
+                        app:iiv_icon="cmd-chevron-down"
+                        android:id="@+id/house_icon1"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:background="@drawable/borderlines"
+                android:padding="10dp"
+                android:id="@+id/head2">
+
+                <TextView
+                    android:id="@+id/lblListHeader2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Household contents"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/list_details_size"/>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        app:iiv_color="@color/colorBlack"
+                        app:iiv_icon="cmd-chevron-down"
+                        android:id="@+id/house_icon2"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:background="@drawable/borderlines"
+                android:padding="10dp"
+                android:id="@+id/head3">
+
+                <TextView
+                    android:id="@+id/lblListHeader3"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Portable possessions"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/list_details_size"/>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        app:iiv_color="@color/colorBlack"
+                        app:iiv_icon="cmd-chevron-down"
+                        android:id="@+id/house_icon3"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:background="@drawable/borderlines"
+                android:padding="10dp"
+                android:id="@+id/head4">
+
+                <TextView
+                    android:id="@+id/lblListHeader4"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Vehicles"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/list_details_size"/>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        app:iiv_color="@color/colorBlack"
+                        app:iiv_icon="cmd-chevron-down"
+                        android:id="@+id/house_icon4"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:background="@drawable/borderlines"
+                android:padding="10dp"
+                android:id="@+id/sub40">
+
+                <TextView
+                    android:id="@+id/lblListHeader40"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Audi R8 5.2FSI R-Tronic"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/list_details_size"
+                    android:layout_marginLeft="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:iiv_color="@color/colorBlueText"
+                        app:iiv_icon="cmd-minus-circle"
+                        android:id="@+id/house_icon40"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:background="@drawable/borderlines"
+                android:padding="10dp"
+                android:id="@+id/sub41">
+
+                <TextView
+                    android:id="@+id/lblListHeader41"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Audi A1 1.4TFSI S-Tronic"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/list_details_size"
+                    android:layout_marginLeft="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:iiv_color="@color/colorBlueText"
+                        app:iiv_icon="cmd-minus-circle"
+                        android:id="@+id/house_icon41"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:background="@drawable/borderlines"
+                android:padding="10dp"
+                android:id="@+id/sub42">
+
+                <TextView
+                    android:id="@+id/lblListHeader42"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="MV Agusta F4 ABS"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/list_details_size"
+                    android:layout_marginLeft="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:iiv_color="@color/colorBlueText"
+                        app:iiv_icon="cmd-minus-circle"
+                        android:id="@+id/house_icon42"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="left"
+                android:background="@drawable/borderlines"
+                android:padding="10dp"
+                android:id="@+id/sub43">
+
+                <TextView
+                    android:id="@+id/lblListHeader43"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Add new vehicle"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/list_details_size"
+                    android:layout_marginLeft="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        app:iiv_color="@color/colorBlueText"
+                        app:iiv_icon="cmd-plus-circle"
+                        android:id="@+id/house_icon43"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

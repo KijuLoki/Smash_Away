@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_activate_policy"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="smashaway.goldenwork.com.smashaway.ActivatePolicyActivity"
+    tools:showIn="@layout/app_bar_activate_policy">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00111111"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"
+            android:alpha="0.2"/>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                style="@style/verticalTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_veh_det"
+                android:textColor="@color/colorBlueText"
+                android:text="Policyholder details"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_margin="20dp">
+    <com.mikepenz.iconics.view.IconicsImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:iiv_color="@color/colormail"
+        app:iiv_icon="cmd-camera"
+        android:id="@+id/ic_photo"
+        app:iiv_size="100dp"
+        android:layout_weight="1"/>
+    <ScrollView android:id="@+id/SCROLL_VIEW"
+        android:layout_height="match_parent"
+        android:layout_width="100dp"
+        android:layout_weight="1">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/TEXT_VIEW"
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:textSize="15dp"
+        android:gravity="center"
+        android:text="We require a photo of your drivers license" />
+</LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="0dp">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Preferred name"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Confirm ID number"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="0dp">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Email address"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Home address"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Emergency contact"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Emergency number"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                style="@style/verticalTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_bank_det"
+                android:textColor="@color/colorBlueText"
+                android:text="Bank details"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="0dp">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Bank name"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Account type"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="0dp">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Account number"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:textSize="17dp"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Branch code"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:textSize="17dp"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/tvaddanother">
+                </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="Submit"
+                        android:textSize="16dp"
+                        android:textColor="@color/colorWhite"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/tvDone"
+                        android:background="@color/colorPrimary"
+                        android:layout_alignParentRight="true"/>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

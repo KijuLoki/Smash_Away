@@ -5,8 +5,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -20,6 +18,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.iconics.view.IconicsImageView;
@@ -29,12 +29,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import smashaway.goldenwork.com.smashaway.Adapters.AlertsAdapter;
-import smashaway.goldenwork.com.smashaway.Adapters.CommunityAdapter;
 import smashaway.goldenwork.com.smashaway.Adapters.NavAdapter;
 import smashaway.goldenwork.com.smashaway.BClass.PoolItem;
 
-public class AlertsActivity extends AppCompatActivity
+public class AddVehicleEndActivity extends AppCompatActivity
         implements ExpandableListView.OnChildClickListener {
 
     private ExpandableListView drawerList;
@@ -45,23 +43,16 @@ public class AlertsActivity extends AppCompatActivity
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-    AlertsAdapter myAdapter;
     List<PoolItem> pitemList;
     IconicsImageView menu_icon, notif_icon;
+    LinearLayout linear_add;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alerts);
+        setContentView(R.layout.activity_add_vehicle_end);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
 
         //Toolbar
         menu_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
@@ -75,21 +66,27 @@ public class AlertsActivity extends AppCompatActivity
         notif_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                gotoAlertsActivity();
             }
         });
 
-        //initialize recyclerview
-        recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
+        //instance linearlayout
+        linear_add = (LinearLayout)findViewById(R.id.linear_add);
+        linear_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoAddVehicleAcceptActivity();
+            }
+        });
 
-        pitemList = new ArrayList<>();
-        myAdapter = new AlertsAdapter(pitemList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerview.setLayoutManager(mLayoutManager);
-        recyclerview.setItemAnimator(new DefaultItemAnimator());
-        recyclerview.setAdapter(myAdapter);
+
         initDashbord();
         initDrawer();
+    }
+
+    private void gotoAddVehicleAcceptActivity() {
+        Intent intent = new Intent(this, AddVehicleAcceptActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -105,7 +102,7 @@ public class AlertsActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.alerts, menu);
+        getMenuInflater().inflate(R.menu.add_vehicle_end, menu);
         return true;
     }
 
@@ -126,31 +123,6 @@ public class AlertsActivity extends AppCompatActivity
 
     private void initDashbord() {
 
-
-        //set fake data for recyclerView
-        //(int id, String name, String ustensile, String type, String dateclaim, String urlprofile)
-        PoolItem p = new PoolItem(0,"Alicia has signed in your pool","Audi Q5 (accident)", "car", "Yesterday","2");
-        pitemList.add(p);
-        p = new PoolItem(1,"We paid your share of Smash profits","iPhone (theft)", "heart", "1 July 2017","3");
-        pitemList.add(p);
-        p = new PoolItem(2,"Theresa submitted a new claim","Guitar (theft)", "heart", "6 June 2017","4");
-        pitemList.add(p);
-        p = new PoolItem(3,"Dick declined your invitation","Geyser (damage)", "house", "2 June 2017","5");
-        pitemList.add(p);
-        p = new PoolItem(4,"Gerhart cancelled his Smash policy","Various items (break-in)", "house", "31 May 2017","6");
-        pitemList.add(p);
-        p = new PoolItem(5,"Can you help Smash\'s newest project","Audi Q5 (accident)", "car", "29 May 2017","7");
-        pitemList.add(p);
-        p = new PoolItem(6,"Smash T\'s &amp C\'s updated","iPhone (theft)", "heart", "23 May 2017","8");
-        pitemList.add(p);
-        p = new PoolItem(7,"Christo submitted a new claim","Guitar (theft)", "heart", "22 May 2017","9");
-        pitemList.add(p);
-        p = new PoolItem(8,"Christo submitted a new claim","Geyser (damage)", "house", "22 May 2017","9");
-        pitemList.add(p);
-        p = new PoolItem(9,"Your claim was approved and paid","Various items (break-in)", "house", "18 February 2017","10");
-        pitemList.add(p);
-        Log.e(TAG, String.valueOf(pitemList.size()));
-        myAdapter.notifyDataSetChanged();
 
         initDrawer();
     }
@@ -352,8 +324,6 @@ public class AlertsActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoInviteActivity(){
-        Intent intent = new Intent(this, InviteActivity.class);
-        startActivity(intent);
     }
     public void gotoPledgePoolActivity(){
         Intent intent = new Intent(this, PledgePoolActivity.class);
@@ -365,6 +335,10 @@ public class AlertsActivity extends AppCompatActivity
 
     public void gotoCurrentProjectActivity(){
         Intent intent = new Intent(this, CurrentProjectsActivity.class);
+        startActivity(intent);
+    }
+    public void gotoAlertsActivity(){
+        Intent intent = new Intent(this, AlertsActivity.class);
         startActivity(intent);
     }
     public void gotoSuggestionActivity(){

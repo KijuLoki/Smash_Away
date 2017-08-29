@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_add_vehicle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="smashaway.goldenwork.com.smashaway.AddVehicleActivity"
+    tools:showIn="@layout/app_bar_add_vehicle">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00111111"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"
+            android:alpha="0.2"/>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:iiv_color="@color/colormail"
+                app:iiv_icon="cmd-camera"
+                android:id="@+id/ic_photo"
+                app:iiv_size="100dp"/>
+            <ScrollView android:id="@+id/SCROLL_VIEW"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent">
+
+                <TextView
+                    android:id="@+id/TEXT_VIEW"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textSize="17dp"
+                    android:gravity="center"
+                    android:text="Capture your drivers license and vehicle's license disc to speed up your quote!" />
+            </ScrollView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <smashaway.goldenwork.com.smashaway.helpers.VerticalTextView
+                    style="@style/verticalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|right"
+                    android:id="@+id/txt_veh_det"
+                    android:textColor="@color/colorBlueText"
+                    android:text="Vehicle details"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="0dp">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Vehicle year"
+                            android:layout_weight="1"
+                            android:inputType="number"
+                            android:textSize="17dp"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Vehicle make"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="0dp">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Vehicle model"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Model variant"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp">
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Daytime parking"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Night-time parking"
+                            android:layout_weight="1"
+                            android:textSize="17dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <smashaway.goldenwork.com.smashaway.helpers.VerticalTextView
+                    style="@style/verticalTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|right"
+                    android:id="@+id/txt_drv_det"
+                    android:textColor="@color/colorBlueText"
+                    android:text="Driver details"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="0dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Age"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:textSize="17dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:textSize="17dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="0dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="License duration"
+                    android:layout_weight="1"
+
+                    android:textSize="17dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Claim free years"
+                    android:layout_weight="1"
+                    android:textSize="17dp"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Home suburb"
+                    android:layout_weight="1"
+                    android:textSize="17dp"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Type of cover"
+                    android:layout_weight="1"
+                    android:textSize="17dp"/>
+
+            </LinearLayout>
+            </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/tvaddanother">
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:text="+"
+                        android:textSize="20dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/colorWhite"
+                        android:background="@drawable/rounded_corner_blue"
+                        android:layout_weight="1"
+                        android:gravity="center"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Add another asset"
+                            android:textSize="16dp"
+                            android:textColor="@color/colorWhite"
+                            android:gravity="center"
+                            android:background="@color/colorPrimary"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginLeft="35dp"
+                            android:layout_weight="1"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="Done"
+                            android:textSize="16dp"
+                            android:textColor="@color/colorWhite"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:id="@+id/tvDone"
+                            android:background="@color/colorPrimary"
+                            android:layout_alignParentRight="true"/>
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

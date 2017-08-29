@@ -370,6 +370,20 @@ public class PersonalPPActivity extends AppCompatActivity
                 gotoCorrespondenceActivity();
             }
         }
+        if(groupPosition == 3){
+            if(childPosition == 0){
+                gotoSubmitNewClaimsActivity();
+            }
+            if(childPosition == 1){
+                gotoTrackMyClaimsActivity();
+            }
+            if(childPosition == 2){
+                gotoClaimsInMyPoolActivity();
+            }
+            if(childPosition == 4){
+                gotoReportafraudsterActivity();
+            }
+        }
         return false;
     }
 
@@ -434,7 +448,8 @@ public class PersonalPPActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoAddRemoveActivity(){
-
+        Intent intent = new Intent(this, AddRemoveCoverActivity.class);
+        startActivity(intent);
     }
     public void gotoMydetailsActivity(){
         Intent intent = new Intent(this, MyDetailsActivity.class);
@@ -444,6 +459,20 @@ public class PersonalPPActivity extends AppCompatActivity
 
     }
     public void gotoCorrespondenceActivity(){
+
+    }
+    public void gotoSubmitNewClaimsActivity(){
+
+    }
+    public void gotoTrackMyClaimsActivity(){
+        Intent intent = new Intent(this, TrackMyClaimsActivity.class);
+        startActivity(intent);
+    }
+    public void gotoClaimsInMyPoolActivity(){
+        Intent intent = new Intent(this, MyPoolClaimActivity.class);
+        startActivity(intent);
+    }
+    public void gotoReportafraudsterActivity(){
 
     }
     public void openDrawer(View view) {

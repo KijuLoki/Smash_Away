@@ -80,6 +80,34 @@
         <activity
             android:name=".MyDetailsProductActivity"
             android:label="@string/title_activity_my_details_product"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddRemoveCoverActivity"
+            android:label="@string/title_activity_add_remove_cover"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TrackMyClaimsActivity"
+            android:label="@string/title_activity_track_my_claims"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MyPoolClaimActivity"
+            android:label="@string/title_activity_my_pool_claim"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddVehicleActivity"
+            android:label="@string/title_activity_add_vehicle"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddVehicleEndActivity"
+            android:label="@string/title_activity_add_vehicle_end"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddVehicleAcceptActivity"
+            android:label="@string/title_activity_add_vehicle_accept"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ActivatePolicyActivity"
+            android:label="@string/title_activity_activate_policy"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

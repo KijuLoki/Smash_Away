@@ -71,4 +71,11 @@
     <string name="title_activity_smash_profits">SmashProfitsActivity</string>
     <string name="title_activity_my_details">MyDetailsActivity</string>
     <string name="title_activity_my_details_product">MyDetailsProductActivity</string>
+    <string name="title_activity_add_remove_cover">AddRemoveCoverActivity</string>
+    <string name="title_activity_track_my_claims">TrackMyClaimsActivity</string>
+    <string name="title_activity_my_pool_claim">MyPoolClaimActivity</string>
+    <string name="title_activity_add_vehicle">AddVehicleActivity</string>
+    <string name="title_activity_add_vehicle_end">AddVehicleEndActivity</string>
+    <string name="title_activity_add_vehicle_accept">AddVehicleAcceptActivity</string>
+    <string name="title_activity_activate_policy">ActivatePolicyActivity</string>
 </resources>

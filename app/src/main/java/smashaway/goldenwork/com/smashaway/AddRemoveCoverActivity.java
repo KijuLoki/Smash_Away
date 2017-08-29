@@ -1,13 +1,11 @@
 package smashaway.goldenwork.com.smashaway;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
@@ -20,49 +18,59 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.iconics.view.IconicsImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import smashaway.goldenwork.com.smashaway.Adapters.AlertsAdapter;
-import smashaway.goldenwork.com.smashaway.Adapters.CommunityAdapter;
 import smashaway.goldenwork.com.smashaway.Adapters.NavAdapter;
 import smashaway.goldenwork.com.smashaway.BClass.PoolItem;
+import smashaway.goldenwork.com.smashaway.helpers.CircleTransform;
 
-public class AlertsActivity extends AppCompatActivity
-        implements ExpandableListView.OnChildClickListener {
+public class AddRemoveCoverActivity extends AppCompatActivity
+        implements ExpandableListView.OnChildClickListener  {
 
+    SharedPreferences sm_pref;
     private ExpandableListView drawerList;
     private DrawerLayout drawer;
     Toolbar toolbar;
-    RecyclerView recyclerview;
-    private String TAG = "COMMUNITY";
+    private String TAG = "ADDREMCOVER";
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
-    private ActionBarDrawerToggle actionBarDrawerToggle;
-    AlertsAdapter myAdapter;
+    private ActionBarDrawerToggle actionBarDrawerToggleCom;
     List<PoolItem> pitemList;
-    IconicsImageView menu_icon, notif_icon;
+    RelativeLayout openAlertRel;
+    IconicsImageView menu_icon,notif_icon;
+    TextView title, lblListHeader60;
+    LinearLayout head1, head2, head3, head4, sub40, sub41, sub42, sub43;
+    IconicsImageView house_icon4;
+    boolean open4= false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alerts);
+        setContentView(R.layout.activity_add_remove_cover);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
+        title = (TextView)findViewById(R.id.title);
 
+        // alert button
+        openAlertRel = (RelativeLayout)toolbar.findViewById(R.id.openAlert);
+        openAlertRel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoAlertsActivity();
+            }
+        });
         //Toolbar
         menu_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
         menu_icon.setOnClickListener(new View.OnClickListener() {
@@ -75,21 +83,55 @@ public class AlertsActivity extends AppCompatActivity
         notif_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                gotoAlertsActivity();
             }
         });
 
-        //initialize recyclerview
-        recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
 
-        pitemList = new ArrayList<>();
-        myAdapter = new AlertsAdapter(pitemList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerview.setLayoutManager(mLayoutManager);
-        recyclerview.setItemAnimator(new DefaultItemAnimator());
-        recyclerview.setAdapter(myAdapter);
+        //Init Content
+        head4 = (LinearLayout)findViewById(R.id.head4);
+        sub40 = (LinearLayout)findViewById(R.id.sub40);
+        sub41 = (LinearLayout)findViewById(R.id.sub41);
+        sub42 = (LinearLayout)findViewById(R.id.sub42);
+        sub43 = (LinearLayout)findViewById(R.id.sub43);
+        house_icon4 = (IconicsImageView)findViewById(R.id.house_icon4);
+        sub40.setVisibility(View.GONE);
+        sub41.setVisibility(View.GONE);
+        sub42.setVisibility(View.GONE);
+        sub43.setVisibility(View.GONE);
+
+        head4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(open4){
+                    sub40.setVisibility(View.GONE);
+                    sub41.setVisibility(View.GONE);
+                    sub42.setVisibility(View.GONE);
+                    sub43.setVisibility(View.GONE);
+                    house_icon4.setColorRes(R.color.colorBlack);
+                    open4 = false;
+                } else{
+                    sub40.setVisibility(View.VISIBLE);
+                    sub41.setVisibility(View.VISIBLE);
+                    sub42.setVisibility(View.VISIBLE);
+                    sub43.setVisibility(View.VISIBLE);
+                    open4 = true;
+                    house_icon4.setColorRes(R.color.colorAccent);
+                }
+            }
+        });
+        sub43.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoAddVehicleActivity();
+            }
+        });
         initDashbord();
-        initDrawer();
+    }
+
+    private void gotoAddVehicleActivity() {
+        Intent intent = new Intent(this, AddVehicleActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -105,7 +147,7 @@ public class AlertsActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.alerts, menu);
+        getMenuInflater().inflate(R.menu.add_remove_cover, menu);
         return true;
     }
 
@@ -125,33 +167,7 @@ public class AlertsActivity extends AppCompatActivity
     }
 
     private void initDashbord() {
-
-
         //set fake data for recyclerView
-        //(int id, String name, String ustensile, String type, String dateclaim, String urlprofile)
-        PoolItem p = new PoolItem(0,"Alicia has signed in your pool","Audi Q5 (accident)", "car", "Yesterday","2");
-        pitemList.add(p);
-        p = new PoolItem(1,"We paid your share of Smash profits","iPhone (theft)", "heart", "1 July 2017","3");
-        pitemList.add(p);
-        p = new PoolItem(2,"Theresa submitted a new claim","Guitar (theft)", "heart", "6 June 2017","4");
-        pitemList.add(p);
-        p = new PoolItem(3,"Dick declined your invitation","Geyser (damage)", "house", "2 June 2017","5");
-        pitemList.add(p);
-        p = new PoolItem(4,"Gerhart cancelled his Smash policy","Various items (break-in)", "house", "31 May 2017","6");
-        pitemList.add(p);
-        p = new PoolItem(5,"Can you help Smash\'s newest project","Audi Q5 (accident)", "car", "29 May 2017","7");
-        pitemList.add(p);
-        p = new PoolItem(6,"Smash T\'s &amp C\'s updated","iPhone (theft)", "heart", "23 May 2017","8");
-        pitemList.add(p);
-        p = new PoolItem(7,"Christo submitted a new claim","Guitar (theft)", "heart", "22 May 2017","9");
-        pitemList.add(p);
-        p = new PoolItem(8,"Christo submitted a new claim","Geyser (damage)", "house", "22 May 2017","9");
-        pitemList.add(p);
-        p = new PoolItem(9,"Your claim was approved and paid","Various items (break-in)", "house", "18 February 2017","10");
-        pitemList.add(p);
-        Log.e(TAG, String.valueOf(pitemList.size()));
-        myAdapter.notifyDataSetChanged();
-
         initDrawer();
     }
     private void initDrawer() {
@@ -171,7 +187,7 @@ public class AlertsActivity extends AppCompatActivity
             }
         });
 
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.drawer_open , R.string.drawer_close ){
+        actionBarDrawerToggleCom = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.drawer_open , R.string.drawer_close ){
 
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -186,25 +202,25 @@ public class AlertsActivity extends AppCompatActivity
                 super.onDrawerOpened(drawerView);
             }
         };
-        actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
-        actionBarDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+        actionBarDrawerToggleCom.setDrawerIndicatorEnabled(false);
+        actionBarDrawerToggleCom.setToolbarNavigationClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(drawer.isDrawerOpen(GravityCompat.START)){
-                    drawer.closeDrawer(GravityCompat.START);
+                    drawer.closeDrawer(GravityCompat.START); Log.e(TAG,"opened");
                 } else{
-                    drawer.openDrawer(GravityCompat.START);
+                    drawer.openDrawer(GravityCompat.START);Log.e(TAG,"closed");
                 }
 
             }
         });
-        actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.menu);
-        actionBarDrawerToggle.setDrawerSlideAnimationEnabled(true);
+        actionBarDrawerToggleCom.setHomeAsUpIndicator(R.drawable.menu);
+        actionBarDrawerToggleCom.setDrawerSlideAnimationEnabled(true);
         //Setting the actionbarToggle to drawer layout
-        drawer.setDrawerListener(actionBarDrawerToggle);
+        drawer.setDrawerListener(actionBarDrawerToggleCom);
 
         //calling sync state is necessay or else your hamburger icon wont show up
-        actionBarDrawerToggle.syncState();
+        actionBarDrawerToggleCom.syncState();
         setGroupIndicatorToRight();
     }
 
@@ -326,7 +342,11 @@ public class AlertsActivity extends AppCompatActivity
 
 
 
-
+    @Override
+    public void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        actionBarDrawerToggleCom.syncState();
+    }
     private void setGroupIndicatorToRight() {
     /* Get the screen width */
         DisplayMetrics dm = new DisplayMetrics();
@@ -342,6 +362,12 @@ public class AlertsActivity extends AppCompatActivity
         return (int) (pixels * scale + 100.0f);
     }
     public void openAlerts(View view) {
+        Intent intent = new Intent(this, AlertsActivity.class);
+        startActivity(intent);
+    }
+    public void gotoAlertsActivity(){
+        Intent intent = new Intent(this, AlertsActivity.class);
+        startActivity(intent);
     }
     public void gotoCommunityActivity(){
         Intent intent = new Intent(this, CommunityActivity.class);
@@ -368,8 +394,7 @@ public class AlertsActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoSuggestionActivity(){
-        Intent intent = new Intent(this, SuggestionActivity.class);
-        startActivity(intent);
+
     }
     public void gotoCommunityQAActivity(){
         Intent intent = new Intent(this, CommunityQAActivity.class);
