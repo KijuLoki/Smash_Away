@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_submit_pledge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="smashaway.goldenwork.com.smashaway.SubmitPledgeActivity"
+    tools:showIn="@layout/app_bar_submit_pledge">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00111111"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"
+            android:alpha="0.2"/>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp">
+
+                <ScrollView android:id="@+id/SCROLL_VIEW"
+                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_weight="1">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <TextView
+                            android:id="@+id/TEXT_VIEW"
+                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:textSize="15dp"
+                            android:gravity="center"
+                            android:text="The pledge pool is for great South Africans that believe they possess the right human qualities to be an asset to the Smash world!" />
+                    </LinearLayout>
+
+                </ScrollView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp">
+
+                <ScrollView android:id="@+id/SCROLL_VIEW2"
+                    android:layout_height="match_parent"
+                    android:layout_width="100dp"
+                    android:layout_weight="1">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <TextView
+                            android:id="@+id/TEXT_VIEW2"
+                            android:layout_height="match_parent"
+                            android:layout_width="wrap_content"
+                            android:textSize="15dp"
+                            android:gravity="center"
+                            android:text="Please tell other Smash members why you believe you should be given a referral code and they will consider it along with your quote details submitted earlier:" />
+                    </LinearLayout>
+
+                </ScrollView>
+            </LinearLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="200sp">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your pledge goes here..."
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/tvaddanother">
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Submit"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/tvDone"
+                    android:background="@color/colorPrimary"
+                    android:layout_alignParentRight="true"/>
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

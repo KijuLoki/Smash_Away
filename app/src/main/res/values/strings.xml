@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Smash Away</string>
+    <string name="app_name">SmashSample</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_loading_ni">LoadingNIActivity</string>
     <string name="title_activity_loading_cn">LoadingCNActivity</string>
@@ -78,4 +78,7 @@
     <string name="title_activity_add_vehicle_end">AddVehicleEndActivity</string>
     <string name="title_activity_add_vehicle_accept">AddVehicleAcceptActivity</string>
     <string name="title_activity_activate_policy">ActivatePolicyActivity</string>
+    <string name="title_activity_submit_pledge">SubmitPledgeActivity</string>
+    <string name="title_activity_submit_claim">SubmitClaimActivity</string>
+    <string name="title_activity_report_fraudster">ReportFraudsterActivity</string>
 </resources>

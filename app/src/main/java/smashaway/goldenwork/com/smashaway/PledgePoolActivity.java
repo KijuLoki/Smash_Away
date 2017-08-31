@@ -380,7 +380,8 @@ public class PledgePoolActivity extends AppCompatActivity
 
     }
     public void gotoSubmitNewClaimsActivity(){
-
+        Intent intent = new Intent(this, SubmitClaimActivity.class);
+        startActivity(intent);
     }
     public void gotoTrackMyClaimsActivity(){
         Intent intent = new Intent(this, TrackMyClaimsActivity.class);
@@ -391,7 +392,8 @@ public class PledgePoolActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoReportafraudsterActivity(){
-
+        Intent intent = new Intent(this, ReportFraudsterActivity.class);
+        startActivity(intent);
     }
     public void openDrawer(View view) {
         if(drawer.isDrawerOpen(GravityCompat.START)){

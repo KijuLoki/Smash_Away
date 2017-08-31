@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="smashaway.goldenwork.com.smashaway.ActivatePolicyActivity">
+    tools:context="smashaway.goldenwork.com.smashaway.SubmitClaimActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Activate Policy"
+                    android:text="Submit claim"
                     android:textStyle="bold"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:layout_weight="6"
@@ -80,7 +80,6 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_activate_policy" />
-
+    <include layout="@layout/content_submit_claim" />
 
 </android.support.design.widget.CoordinatorLayout>

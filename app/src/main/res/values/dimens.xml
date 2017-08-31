@@ -8,4 +8,5 @@
     <dimen name="nav_header_height">60dp</dimen>
     <dimen name="list_details_size">15dp</dimen>
     <dimen name="list_details_size_sub">12dp</dimen>
+    <dimen name="list_add_vehicle2">13dp</dimen>
 </resources>

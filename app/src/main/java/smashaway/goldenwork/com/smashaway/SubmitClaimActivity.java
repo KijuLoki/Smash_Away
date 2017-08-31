@@ -5,8 +5,6 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -20,7 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.iconics.view.IconicsImageView;
@@ -30,11 +28,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import smashaway.goldenwork.com.smashaway.Adapters.CommunityAdapter;
 import smashaway.goldenwork.com.smashaway.Adapters.NavAdapter;
 import smashaway.goldenwork.com.smashaway.BClass.PoolItem;
 
-public class CommunityActivity extends AppCompatActivity
+public class SubmitClaimActivity extends AppCompatActivity
         implements ExpandableListView.OnChildClickListener {
 
     private ExpandableListView drawerList;
@@ -44,27 +41,17 @@ public class CommunityActivity extends AppCompatActivity
     private String TAG = "COMMUNITY";
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;
-    private ActionBarDrawerToggle actionBarDrawerToggleCom;
-    CommunityAdapter myAdapter;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
     List<PoolItem> pitemList;
-    RelativeLayout openAlertRel;
     IconicsImageView menu_icon, notif_icon;
+    TextView txt_drv_det, txt_veh_det, tvDone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_community);
+        setContentView(R.layout.activity_submit_claim);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-       /* DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
-
 
         //Toolbar
         menu_icon = (IconicsImageView)toolbar.findViewById(R.id.menu_icon);
@@ -82,23 +69,10 @@ public class CommunityActivity extends AppCompatActivity
             }
         });
 
-        //initialize recyclerview
-        recyclerview = (RecyclerView)findViewById(R.id.recyclerview);
-        // alert button
-        openAlertRel = (RelativeLayout)toolbar.findViewById(R.id.openAlert);
-        openAlertRel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                gotoAlertsActivity();
-            }
-        });
+        //
 
-        pitemList = new ArrayList<>();
-        myAdapter = new CommunityAdapter(pitemList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerview.setLayoutManager(mLayoutManager);
-        recyclerview.setItemAnimator(new DefaultItemAnimator());
-        recyclerview.setAdapter(myAdapter);
+
+
         initDashbord();
         initDrawer();
     }
@@ -116,7 +90,7 @@ public class CommunityActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.community, menu);
+        getMenuInflater().inflate(R.menu.submit_claim, menu);
         return true;
     }
 
@@ -138,31 +112,6 @@ public class CommunityActivity extends AppCompatActivity
     private void initDashbord() {
 
 
-        //set fake data for recyclerView
-        //(int id, String name, String ustensile, String type, String dateclaim, String urlprofile)
-        PoolItem p = new PoolItem(0,"Alicia","Audi Q5 (accident)", "car", "No claims for this semester yet!","http://gpluseurope.com/wp-content/uploads/Website2016-Profile-Photos-Aurelie-Caulier.jpg");
-        pitemList.add(p);
-        p = new PoolItem(1,"Theresa","iPhone (theft)", "heart", "2 claims so far this semester","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(2,"Linda","Guitar (theft)", "heart", "Subtitle","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(3,"Dieter","Geyser (damage)", "house", "1 claim so far this semester","http://events.gartner.com/globalimages/global/speakers/2/speaker-751864.png");
-        pitemList.add(p);
-        p = new PoolItem(4,"Christo","Various items (break-in)", "house", "5 claims so far this semester","https://d2fijpsef22722.cloudfront.net/photos/pd_portrait_big/348636407-the-side-roads-with-peek-s-co-founder---cto.jpg");
-        pitemList.add(p);
-        p = new PoolItem(5,"Ruan","Various items (break-in)", "house", "No claims for this semester yet!","https://d2fijpsef22722.cloudfront.net/photos/pd_portrait_big/348636407-the-side-roads-with-peek-s-co-founder---cto.jpg");
-        pitemList.add(p);
-        p = new PoolItem(6,"John","Guitar (theft)", "heart", "2 claims so far this semester","");
-        pitemList.add(p);
-        p = new PoolItem(7,"Vacant - invite someone?","Geyser (damage)", "house", "","1");
-        pitemList.add(p);
-        p = new PoolItem(8,"Vacant - invite someone?","Various items (break-in)", "house", "","1");
-        pitemList.add(p);
-        p = new PoolItem(9,"Vacant - invite someone?","Various items (break-in)", "house", "","1");
-        pitemList.add(p);
-        Log.e(TAG, String.valueOf(pitemList.size()));
-        myAdapter.notifyDataSetChanged();
-
         initDrawer();
     }
     private void initDrawer() {
@@ -182,7 +131,7 @@ public class CommunityActivity extends AppCompatActivity
             }
         });
 
-        actionBarDrawerToggleCom = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.drawer_open , R.string.drawer_close ){
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.drawer_open , R.string.drawer_close ){
 
             @Override
             public void onDrawerClosed(View drawerView) {
@@ -197,25 +146,25 @@ public class CommunityActivity extends AppCompatActivity
                 super.onDrawerOpened(drawerView);
             }
         };
-        actionBarDrawerToggleCom.setDrawerIndicatorEnabled(false);
-        actionBarDrawerToggleCom.setToolbarNavigationClickListener(new View.OnClickListener() {
+        actionBarDrawerToggle.setDrawerIndicatorEnabled(false);
+        actionBarDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(drawer.isDrawerOpen(GravityCompat.START)){
-                    drawer.closeDrawer(GravityCompat.START); Log.e(TAG,"opened");
+                    drawer.closeDrawer(GravityCompat.START);
                 } else{
-                    drawer.openDrawer(GravityCompat.START);Log.e(TAG,"closed");
+                    drawer.openDrawer(GravityCompat.START);
                 }
 
             }
         });
-        actionBarDrawerToggleCom.setHomeAsUpIndicator(R.drawable.menu);
-        actionBarDrawerToggleCom.setDrawerSlideAnimationEnabled(true);
+        actionBarDrawerToggle.setHomeAsUpIndicator(R.drawable.menu);
+        actionBarDrawerToggle.setDrawerSlideAnimationEnabled(true);
         //Setting the actionbarToggle to drawer layout
-        drawer.setDrawerListener(actionBarDrawerToggleCom);
+        drawer.setDrawerListener(actionBarDrawerToggle);
 
         //calling sync state is necessay or else your hamburger icon wont show up
-        actionBarDrawerToggleCom.syncState();
+        actionBarDrawerToggle.syncState();
         setGroupIndicatorToRight();
     }
 
@@ -337,11 +286,7 @@ public class CommunityActivity extends AppCompatActivity
 
 
 
-    @Override
-    public void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        actionBarDrawerToggleCom.syncState();
-    }
+
     private void setGroupIndicatorToRight() {
     /* Get the screen width */
         DisplayMetrics dm = new DisplayMetrics();
@@ -357,22 +302,16 @@ public class CommunityActivity extends AppCompatActivity
         return (int) (pixels * scale + 100.0f);
     }
     public void openAlerts(View view) {
-        Intent intent = new Intent(this, AlertsActivity.class);
-        startActivity(intent);
-    }
-    public void gotoAlertsActivity(){
-        Intent intent = new Intent(this, AlertsActivity.class);
-        startActivity(intent);
     }
     public void gotoCommunityActivity(){
+        Intent intent = new Intent(this, CommunityActivity.class);
+        startActivity(intent);
     }
     public void gotoDashboard(){
         Intent intent = new Intent(this, DashboardActivity.class);
         startActivity(intent);
     }
     public void gotoInviteActivity(){
-        Intent intent = new Intent(this, InviteActivity.class);
-        startActivity(intent);
     }
     public void gotoPledgePoolActivity(){
         Intent intent = new Intent(this, PledgePoolActivity.class);
@@ -384,6 +323,10 @@ public class CommunityActivity extends AppCompatActivity
 
     public void gotoCurrentProjectActivity(){
         Intent intent = new Intent(this, CurrentProjectsActivity.class);
+        startActivity(intent);
+    }
+    public void gotoAlertsActivity(){
+        Intent intent = new Intent(this, AlertsActivity.class);
         startActivity(intent);
     }
     public void gotoSuggestionActivity(){
@@ -409,8 +352,7 @@ public class CommunityActivity extends AppCompatActivity
 
     }
     public void gotoSubmitNewClaimsActivity(){
-        Intent intent = new Intent(this, SubmitClaimActivity.class);
-        startActivity(intent);
+
     }
     public void gotoTrackMyClaimsActivity(){
         Intent intent = new Intent(this, TrackMyClaimsActivity.class);

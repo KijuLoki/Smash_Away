@@ -88,13 +88,13 @@
                             android:hint="Vehicle year"
                             android:layout_weight="1"
                             android:inputType="number"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:hint="Vehicle make"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -109,13 +109,13 @@
                             android:layout_height="50dp"
                             android:hint="Vehicle model"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:hint="Model variant"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -130,13 +130,13 @@
                             android:layout_height="50dp"
                             android:hint="Daytime parking"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:hint="Night-time parking"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -173,13 +173,13 @@
                     android:hint="Age"
                     android:layout_weight="1"
                     android:inputType="number"
-                    android:textSize="17dp"/>
+                    android:textSize="@dimen/list_add_vehicle2"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:inputType="number"
-                    android:textSize="17dp"/>
+                    android:hint="License type"
+                    android:textSize="@dimen/list_add_vehicle2"/>
 
             </LinearLayout>
             <LinearLayout
@@ -195,13 +195,13 @@
                     android:hint="License duration"
                     android:layout_weight="1"
 
-                    android:textSize="17dp"/>
+                    android:textSize="@dimen/list_add_vehicle2"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="Claim free years"
                     android:layout_weight="1"
-                    android:textSize="17dp"/>
+                    android:textSize="@dimen/list_add_vehicle2"/>
 
             </LinearLayout>
             <LinearLayout
@@ -216,13 +216,13 @@
                     android:layout_height="50dp"
                     android:hint="Home suburb"
                     android:layout_weight="1"
-                    android:textSize="17dp"/>
+                    android:textSize="@dimen/list_add_vehicle2"/>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:hint="Type of cover"
                     android:layout_weight="1"
-                    android:textSize="17dp"/>
+                    android:textSize="@dimen/list_add_vehicle2"/>
 
             </LinearLayout>
             </LinearLayout>
@@ -231,7 +231,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="30dp"
                 android:orientation="horizontal">
                 <RelativeLayout
                     android:layout_width="match_parent"

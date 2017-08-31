@@ -108,6 +108,18 @@
         <activity
             android:name=".ActivatePolicyActivity"
             android:label="@string/title_activity_activate_policy"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SubmitPledgeActivity"
+            android:label="@string/title_activity_submit_pledge"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SubmitClaimActivity"
+            android:label="@string/title_activity_submit_claim"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReportFraudsterActivity"
+            android:label="@string/title_activity_report_fraudster"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

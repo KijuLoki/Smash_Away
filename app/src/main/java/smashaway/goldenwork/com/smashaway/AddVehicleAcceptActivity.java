@@ -48,7 +48,7 @@ public class AddVehicleAcceptActivity extends AppCompatActivity
     List<PoolItem> pitemList;
     IconicsImageView menu_icon, notif_icon;
     TextView txt_drv_det, txt_veh_det, tvalternative;
-    LinearLayout linear_ref;
+    LinearLayout linear_ref, bt_pledge;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,10 +86,21 @@ public class AddVehicleAcceptActivity extends AppCompatActivity
                 gotoActivatePolicyActivity();
             }
         });
-
+        bt_pledge = (LinearLayout)findViewById(R.id.bt_pledge);
+        bt_pledge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSubmitPledgeActivity();
+            }
+        });
 
         initDashbord();
         initDrawer();
+    }
+
+    private void gotoSubmitPledgeActivity() {
+        Intent intent = new Intent(this, SubmitPledgeActivity.class);
+        startActivity(intent);
     }
 
     private void gotoActivatePolicyActivity() {
@@ -130,9 +141,9 @@ public class AddVehicleAcceptActivity extends AppCompatActivity
     }
 
     private void initDashbord() {
-        String s= "if you believe you fit the role, SUNMIT A PLEDGE";
+        String s= "if you believe you fit the role, SUBMIT A PLEDGE";
         SpannableString ss1=  new SpannableString(s);
-        ss1.setSpan(new RelativeSizeSpan(1.3f), 32,48, 0); // set size
+        ss1.setSpan(new RelativeSizeSpan(1.2f), 32,48, 0); // set size
 
         tvalternative.setText(ss1);
 
@@ -376,7 +387,8 @@ public class AddVehicleAcceptActivity extends AppCompatActivity
 
     }
     public void gotoSubmitNewClaimsActivity(){
-
+        Intent intent = new Intent(this, SubmitClaimActivity.class);
+        startActivity(intent);
     }
     public void gotoTrackMyClaimsActivity(){
         Intent intent = new Intent(this, TrackMyClaimsActivity.class);
@@ -387,7 +399,8 @@ public class AddVehicleAcceptActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoReportafraudsterActivity(){
-
+        Intent intent = new Intent(this, ReportFraudsterActivity.class);
+        startActivity(intent);
     }
     public void openDrawer(View view) {
         if(drawer.isDrawerOpen(GravityCompat.START)){

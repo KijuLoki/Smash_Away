@@ -100,13 +100,13 @@
                             android:layout_height="50dp"
                             android:hint="Preferred name"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:hint="Confirm ID number"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -121,13 +121,13 @@
                             android:layout_height="50dp"
                             android:hint="Email address"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:hint="Home address"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -142,13 +142,13 @@
                             android:layout_height="50dp"
                             android:hint="Emergency contact"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:hint="Emergency number"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -183,13 +183,13 @@
                             android:layout_height="50dp"
                             android:hint="Bank name"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:hint="Account type"
                             android:layout_weight="1"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
 
                     </LinearLayout>
                     <LinearLayout
@@ -205,14 +205,14 @@
                             android:hint="Account number"
                             android:layout_weight="1"
                             android:inputType="number"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:hint="Branch code"
                             android:layout_weight="1"
                             android:inputType="number"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/list_add_vehicle2"/>
 
                     </LinearLayout>
 
@@ -222,7 +222,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="30dp"
                 android:orientation="horizontal">
                 <RelativeLayout
                     android:layout_width="match_parent"
