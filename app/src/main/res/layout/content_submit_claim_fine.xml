@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_submit_claim_fine"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="smashaway.goldenwork.com.smashaway.SubmitClaimFineActivity"
+    tools:showIn="@layout/app_bar_submit_claim_fine">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00111111"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"
+            android:alpha="0.2"/>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="0dp">
+                <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                    android:text="What are you claiming for?"
+                    android:textSize="@dimen/list_details_size_sub"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="Audi A1 1.4TFSI S-Tronic"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="0dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What went wrong?"
+                android:textSize="@dimen/list_details_size_sub"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Theft"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Police case no (this can be submitted later)"
+                    android:textSize="@dimen/list_details_size_sub"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="tbc"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5sp">
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80sp"
+                    app:iiv_color="@color/colorBlueText"
+                    app:iiv_icon="cmd-microphone-outline"
+                    android:id="@+id/menu_icon"
+                    android:layout_weight="5"
+                    app:iiv_size="80sp"/>
+                <ScrollView android:id="@+id/SCROLL_VIEW"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Please tell us exactly(e.g. I was hijacked by three attackers at 13h30 on 1 July 2017 at the Rivonia N1 onramp robot here in Sandton)"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/colorGrey1"
+                            android:textSize="@dimen/list_add_vehicle2"/>
+                    </LinearLayout>
+
+                </ScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5sp">
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80sp"
+                    app:iiv_color="@color/colorBlueText"
+                    app:iiv_icon="cmd-camera"
+                    android:id="@+id/menu_icon2"
+                    android:layout_weight="5"
+                    app:iiv_size="80sp"/>
+                <ScrollView android:id="@+id/SCROLL_VIEW2"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="We need some photos of the scene and will guide you through them one-by-one once you are ready"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/colorGrey1"
+                            android:textSize="@dimen/list_add_vehicle2"/>
+                    </LinearLayout>
+
+                </ScrollView>
+            </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/rly_previous"
+        android:gravity="center">
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            app:iiv_color="@color/colorBlueText"
+            app:iiv_icon="cmd-arrow-left"
+            app:iiv_size="40sp"
+            android:layout_weight="1"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/rly_save"
+        android:gravity="center">
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            app:iiv_color="@color/colorBlueText"
+            app:iiv_icon="cmd-content-save"
+            app:iiv_size="40sp"
+            android:layout_weight="1"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/rly_next"
+        android:gravity="center">
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            app:iiv_color="@color/colorBlueText"
+            app:iiv_icon="cmd-send"
+            app:iiv_size="40sp"
+            android:layout_weight="1"/>
+    </RelativeLayout>
+</LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

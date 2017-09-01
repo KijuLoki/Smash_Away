@@ -18,6 +18,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,7 +45,7 @@ public class SubmitClaimActivity extends AppCompatActivity
     private ActionBarDrawerToggle actionBarDrawerToggle;
     List<PoolItem> pitemList;
     IconicsImageView menu_icon, notif_icon;
-    TextView txt_drv_det, txt_veh_det, tvDone;
+    ImageView iv_thumbsup, iv_towtruck, iv_ambulance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +70,46 @@ public class SubmitClaimActivity extends AppCompatActivity
             }
         });
 
-        //
+        //init submit claim
+        iv_ambulance = (ImageView)findViewById(R.id.iv_ambulance);
+        iv_towtruck = (ImageView)findViewById(R.id.iv_towtruck);
+        iv_thumbsup = (ImageView)findViewById(R.id.iv_thumbsup);
+        iv_ambulance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSendAmbulance();
+            }
+        });
+        iv_towtruck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoSendTowTruck();
+            }
+        });
+        iv_thumbsup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                gotoThumbsUp();
+            }
+        });
 
 
 
         initDashbord();
         initDrawer();
+    }
+
+    private void gotoThumbsUp() {
+        Intent intent = new Intent(this, SubmitClaimFineActivity.class);
+        startActivity(intent);
+    }
+
+    private void gotoSendTowTruck() {
+    }
+
+    private void gotoSendAmbulance() {
+        Intent intent = new Intent(this, SendAmbulanceActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -263,7 +298,7 @@ public class SubmitClaimActivity extends AppCompatActivity
             if(childPosition == 2){
                 gotoTodoActivity();
             }
-            if(childPosition == 4){
+            if(childPosition == 3){
                 gotoCorrespondenceActivity();
             }
         }
@@ -277,7 +312,7 @@ public class SubmitClaimActivity extends AppCompatActivity
             if(childPosition == 2){
                 gotoClaimsInMyPoolActivity();
             }
-            if(childPosition == 4){
+            if(childPosition == 3){
                 gotoReportafraudsterActivity();
             }
         }
@@ -363,7 +398,7 @@ public class SubmitClaimActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoReportafraudsterActivity(){
-        Intent intent = new Intent(this, ReportFraudsterActivity.class);
+        Intent intent = new Intent(this, AnonymousLeadActivity.class);
         startActivity(intent);
     }
     public void openDrawer(View view) {

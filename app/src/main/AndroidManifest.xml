@@ -120,6 +120,22 @@
         <activity
             android:name=".ReportFraudsterActivity"
             android:label="@string/title_activity_report_fraudster"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SendAmbulanceActivity"
+            android:label="@string/title_activity_send_ambulance"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SubmitClaimFineActivity"
+            android:label="@string/title_activity_submit_claim_fine"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SubmitClaimFine2Activity"
+            android:label="@string/title_activity_submit_claim_fine2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AnonymousLeadActivity"
+            android:label="@string/title_activity_anonymous_lead"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

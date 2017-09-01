@@ -69,63 +69,37 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120sp"
+                android:layout_height="130sp"
                 android:gravity="center"
-                android:layout_margin="10sp">
-                <com.mikepenz.iconics.view.IconicsImageView
-                    android:layout_width="100sp"
-                    android:layout_height="100sp"
-                    app:iiv_color="@color/colorBlueText"
-                    app:iiv_icon="cmd-thumb-up"
-                    android:id="@+id/bt_fine"
-                    android:layout_weight="1"/>
-                <TextView
-                    android:layout_width="100sp"
-                    android:layout_height="100sp"
-                    android:layout_marginTop="10sp"
-                    android:gravity="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="I'm fine!"/>
+                android:layout_margin="0sp">
+                <ImageView
+                    android:layout_width="130sp"
+                    android:layout_height="130sp"
+                    android:src="@drawable/thumbsup_text"
+                    android:id="@+id/iv_thumbsup"/>
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120sp"
+                android:layout_height="130sp"
                 android:gravity="center"
-                android:layout_margin="10sp">
-                <com.mikepenz.iconics.view.IconicsImageView
-                    android:layout_width="100sp"
-                    android:layout_height="100sp"
-                    app:iiv_color="@color/colorBlueText"
-                    app:iiv_icon="cmd-truck-delivery"
-                    android:id="@+id/bt_truck"
-                    android:layout_weight="1"/>
-                <TextView
-                    android:layout_width="100sp"
-                    android:layout_height="100sp"
-                    android:layout_marginTop="10sp"
-                    android:gravity="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="Tow truck"/>
+                android:layout_margin="0sp">
+                <ImageView
+                    android:layout_width="130sp"
+                    android:layout_height="130sp"
+                    android:src="@drawable/towtruck_text"
+                    android:id="@+id/iv_towtruck"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120sp"
+                android:layout_height="130sp"
                 android:gravity="center"
-                android:layout_margin="10sp">
-                <com.mikepenz.iconics.view.IconicsImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    app:iiv_color="@color/colorBlueText"
-                    app:iiv_icon="cmd-ambulance"
-                    android:id="@+id/bt_ambulance"
-                    android:layout_weight="1"/>
-                <TextView
-                    android:layout_width="100sp"
-                    android:layout_height="100sp"
-                    android:layout_marginTop="10sp"
-                    android:gravity="center"
-                    android:textColor="@color/colorWhite"
-                    android:text="Ambulance"/>
+                android:layout_margin="0sp">
+                <ImageView
+                    android:layout_width="130sp"
+                    android:layout_height="130sp"
+                    android:src="@drawable/ambulance_text"
+                    android:id="@+id/iv_ambulance"/>
             </RelativeLayout>
 
 

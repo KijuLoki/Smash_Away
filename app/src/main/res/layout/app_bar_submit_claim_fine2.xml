@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="smashaway.goldenwork.com.smashaway.SubmitClaimFine2Activity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorWhite"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/ToolbarColoredBackArrow"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@color/colorWhite"
+                android:layout_margin="-10dp">
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    app:iiv_color="@color/colorBlueText"
+                    app:iiv_icon="cmd-menu"
+                    android:id="@+id/menu_icon"
+                    android:layout_weight="1" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit claim"
+                    android:textStyle="bold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_weight="6"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/colorBlueText"
+                    android:textSize="25dp"/>
+                <RelativeLayout
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:id="@+id/openAlert">
+                    <com.mikepenz.iconics.view.IconicsImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:iiv_color="@color/clo3"
+                        app:iiv_icon="cmd-bell"
+                        android:id="@+id/notif_icon"
+                        android:layout_weight="1"
+                        android:layout_margin="10dp"/>
+                    <TextView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:text="6"
+                        android:textSize="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"
+                        android:gravity="center"
+                        android:layout_margin="19dp"
+                        android:background="@drawable/rounded_corner"
+                        android:layout_toRightOf="@+id/lblListItem"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/notif_number"/>
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_submit_claim_fine2" />
+
+</android.support.design.widget.CoordinatorLayout>

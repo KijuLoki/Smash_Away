@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_submit_claim_fine2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="smashaway.goldenwork.com.smashaway.SubmitClaimFine2Activity"
+    tools:showIn="@layout/app_bar_submit_claim_fine2">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00111111"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_logo"
+            android:alpha="0.2"/>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="0dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="What are you claiming for?"
+                            android:textSize="@dimen/list_details_size_sub"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Audi A1 1.4TFSI S-Tronic"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="0dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="What went wrong?"
+                            android:textSize="@dimen/list_details_size_sub"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="Theft"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Police case no (this can be submitted later)"
+                            android:textSize="@dimen/list_details_size_sub"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:hint="AR400/07/2017"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+            </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="3">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5sp">
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                app:iiv_color="@color/colorBlueText"
+                app:iiv_icon="cmd-microphone-outline"
+                android:id="@+id/menu_icon"
+                android:layout_weight="5"
+                app:iiv_size="50sp"/>
+            <ScrollView android:id="@+id/SCROLL_VIEW"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Listen to recording"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/colorGrey1"
+                        android:textSize="@dimen/list_add_vehicle2"/>
+                </LinearLayout>
+
+            </ScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5sp">
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                app:iiv_color="@color/colorBlueText"
+                app:iiv_icon="cmd-camera"
+                android:id="@+id/menu_icon2"
+                android:layout_weight="5"
+                app:iiv_size="50sp"/>
+            <ScrollView android:id="@+id/SCROLL_VIEW2"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="2">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Check photos"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/colorGrey1"
+                        android:textSize="@dimen/list_add_vehicle2"/>
+                </LinearLayout>
+
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp">
+                <ScrollView android:id="@+id/SCROLL_VIEW4"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Remember all the hype about smsh being all about honesty and integrity of our community?"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/colorBlack"
+                            android:layout_marginLeft="0sp"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/list_details_size"/>
+                    </LinearLayout>
+
+                </ScrollView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10sp">
+                <ScrollView android:id="@+id/SCROLL_VIEW5"
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="This is where you have to swear that all the information submitted for this claim is the whole truth. If we find out later that anything here is false, you hereby agree that: \n1. Your policy will be canceled without any refund\n2. You will be handed over the SAPS\n3. We reserve the right to publish all details of this crime on any public medium of our choice"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/colorBlack"
+                            android:layout_marginLeft="0sp"
+                            android:textSize="@dimen/list_details_size"/>
+                    </LinearLayout>
+
+                </ScrollView>
+            </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="5sp"
+                    android:background="@color/colorBlueText"
+                    android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+                    <ScrollView android:id="@+id/SCROLL_VIEW3"
+                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="YES AND I AGREE TO ALL THE REPERCUSSIONS IF NOT TRUE"
+                                android:gravity="center_horizontal"
+                                android:textColor="@color/colorWhite"
+                                android:layout_marginLeft="0sp"
+                                android:textSize="@dimen/list_details_size"/>
+                        </LinearLayout>
+
+                    </ScrollView>
+                        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5">
+                        <com.mikepenz.iconics.view.IconicsImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="50sp"
+                            app:iiv_color="@color/colorWhite"
+                            app:iiv_icon="cmd-cube-send"
+                            android:id="@+id/menu_icon3"
+                            app:iiv_size="40sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

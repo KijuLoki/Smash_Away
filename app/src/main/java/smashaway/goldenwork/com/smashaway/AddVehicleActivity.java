@@ -277,7 +277,7 @@ public class AddVehicleActivity extends AppCompatActivity
             if(childPosition == 2){
                 gotoTodoActivity();
             }
-            if(childPosition == 4){
+            if(childPosition == 3){
                 gotoCorrespondenceActivity();
             }
         }
@@ -291,7 +291,7 @@ public class AddVehicleActivity extends AppCompatActivity
             if(childPosition == 2){
                 gotoClaimsInMyPoolActivity();
             }
-            if(childPosition == 4){
+            if(childPosition == 3){
                 gotoReportafraudsterActivity();
             }
         }
@@ -378,7 +378,7 @@ public class AddVehicleActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoReportafraudsterActivity(){
-        Intent intent = new Intent(this, ReportFraudsterActivity.class);
+        Intent intent = new Intent(this, AnonymousLeadActivity.class);
         startActivity(intent);
     }
     public void openDrawer(View view) {

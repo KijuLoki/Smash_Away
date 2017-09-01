@@ -81,4 +81,8 @@
     <string name="title_activity_submit_pledge">SubmitPledgeActivity</string>
     <string name="title_activity_submit_claim">SubmitClaimActivity</string>
     <string name="title_activity_report_fraudster">ReportFraudsterActivity</string>
+    <string name="title_activity_send_ambulance">SendAmbulanceActivity</string>
+    <string name="title_activity_submit_claim_fine">SubmitClaimFineActivity</string>
+    <string name="title_activity_submit_claim_fine2">SubmitClaimFine2Activity</string>
+    <string name="title_activity_anonymous_lead">AnonymousLeadActivity</string>
 </resources>

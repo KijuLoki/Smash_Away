@@ -263,7 +263,7 @@ public class ReportFraudsterActivity extends AppCompatActivity
             if(childPosition == 2){
                 gotoTodoActivity();
             }
-            if(childPosition == 4){
+            if(childPosition == 3){
                 gotoCorrespondenceActivity();
             }
         }
@@ -277,7 +277,7 @@ public class ReportFraudsterActivity extends AppCompatActivity
             if(childPosition == 2){
                 gotoClaimsInMyPoolActivity();
             }
-            if(childPosition == 4){
+            if(childPosition == 3){
                 gotoReportafraudsterActivity();
             }
         }
@@ -364,7 +364,8 @@ public class ReportFraudsterActivity extends AppCompatActivity
         startActivity(intent);
     }
     public void gotoReportafraudsterActivity(){
-
+        Intent intent = new Intent(this, AnonymousLeadActivity.class);
+        startActivity(intent);
     }
     public void openDrawer(View view) {
         if(drawer.isDrawerOpen(GravityCompat.START)){
