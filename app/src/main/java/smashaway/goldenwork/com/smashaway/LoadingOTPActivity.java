@@ -26,7 +26,7 @@ public class LoadingOTPActivity extends AppCompatActivity {
         });
     }
     private void gotoCN() {
-        Intent intent = new Intent(this, DashboardActivity.class);
+        Intent intent = new Intent(this, InitDashboardActivity.class);
         startActivity(intent);
     }
 }

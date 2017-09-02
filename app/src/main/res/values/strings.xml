@@ -85,4 +85,5 @@
     <string name="title_activity_submit_claim_fine">SubmitClaimFineActivity</string>
     <string name="title_activity_submit_claim_fine2">SubmitClaimFine2Activity</string>
     <string name="title_activity_anonymous_lead">AnonymousLeadActivity</string>
+    <string name="title_activity_init_dashboard">InitDashboardActivity</string>
 </resources>

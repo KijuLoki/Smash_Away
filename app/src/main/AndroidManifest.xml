@@ -136,6 +136,10 @@
         <activity
             android:name=".AnonymousLeadActivity"
             android:label="@string/title_activity_anonymous_lead"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InitDashboardActivity"
+            android:label="@string/title_activity_init_dashboard"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
